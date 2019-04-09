@@ -7,5 +7,4 @@ useful c++ functions for file time log factory string and random.
 
 git clone https://github.com/codeArtistDbs/cppCommon.git
 
-cd cppCommon  && mkdir build && cd build
-make -j
+cd cppCommon  && mkdir build && cd build && make -j
