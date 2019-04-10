@@ -7,7 +7,7 @@ useful c++ functions for file time log factory string and random.
 
 git clone https://github.com/codeArtistDbs/dbsCppCommon.git
 
-cd cppCommon 
+cd dbsCppCommon 
 mkdir lib && mkdir build && cd build 
 cmake ../src/Common/ && make -j
-ln -s libCommon.a ../../lib/libCommon.a
+ln -s $(pwd)/libCommon.a ../lib/libCommon.a
