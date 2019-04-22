@@ -72,6 +72,15 @@ public:
 		std::stringstream m_Convertor(readValue(vKey));
 		m_Convertor >> voValue;
 	}
+	template<typename T>
+	T readValue(const std::string& vKey)
+	{
+		T voValue;
+		std::stringstream m_Convertor(readValue(vKey));
+		m_Convertor >> voValue;
+		return voValue;
+	}
+
 	void appandConfigInfor(const std::string& vConfigFileName);
 	static CConfiger* getOrCreateConfiger(const std::string& vConfigFileName = "Configer.txt");
 
