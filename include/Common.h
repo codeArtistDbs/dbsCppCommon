@@ -255,4 +255,3 @@ private:
 	}
 	bool m_useTimeSeed;
 };
-

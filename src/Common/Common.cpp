@@ -232,3 +232,5 @@ unsigned int getThreadID()
 	auto Tid = std::this_thread::get_id();
 	return *(unsigned int*)&Tid;
 }
+
+

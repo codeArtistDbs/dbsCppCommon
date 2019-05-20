@@ -10,6 +10,7 @@
 #include "StringFunction.h"
 //文件名
 inline void toStandardPath(std::string& vioPath);//转换成标准路径：即用正斜杠'/'而不是用反斜杠'\'
+inline std::string extractFilePath(const std::string& vFullFileName);
 inline std::string extractFileName(const std::string& vFullFileName);
 template<class Functor> size_t readPathOrText(const std::string& vImagePathOrFileName, std::vector<std::string>& voFileNameSet, Functor pred, size_t vOffset=0, bool vWithPath=true);
 inline std::string assembleFullFileName(const std::string& vPath, const std::string& vFileName)
@@ -70,6 +71,16 @@ void toStandardPath(std::string& vioPath)
 			*pTemp = '/';
 		pTemp++;
 	}
+}
+
+
+std::string extractFilePath(const std::string& vFullFileName)
+{
+	int iSeprator = vFullFileName.rfind('/');
+	if (0 > iSeprator)
+		iSeprator = vFullFileName.rfind('\\');
+	iSeprator++;
+	return vFullFileName.substr(0, iSeprator);
 }
 
 inline std::string extractFileName(const std::string& vFullFileName)
