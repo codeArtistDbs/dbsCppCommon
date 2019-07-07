@@ -32,9 +32,8 @@ inline std::string deleteExtentionName(const std::string& vFileName, bool vDotRe
 inline std::string extractExtentionName(const std::string& vFileName);
 
 //读写二进制文件
-template<typename T> bool writeBinaryData(const std::string& vFileName, const std::vector<T>& vData);
-bool writeBinaryData(const std::string& vFileName, const char* vpTag, unsigned int vTagSize,  const char* vpData, unsigned int vDataSize);
-template<typename T> void readBinaryData(const std::string& vFileName, std::vector<T>& voDataAppanding);
+inline bool writeFromMemory2File(const std::string& vFileName, const void* vpBinaryData, size_t vBites);
+inline bool readBinaryDataFromFile2Memory(const std::string& vFileName, void* &vopBuffer, size_t& vioBites);
 
 template<typename TStream>
 bool openFileStream(const std::string& vFileName, std::ios_base::openmode vMode, TStream& vioFStream, const std::string& vErrInfor)
@@ -134,92 +133,46 @@ size_t readPathOrText(const std::string& vImagePathOrFileName, std::vector<std::
 	return vOffset;
 }
 
-template<typename T> bool writeBinaryData(const std::string& vFileName, const std::vector<T>& vData)
+bool writeFromMemory2File(const std::string& vFileName, const void* vpBinaryData, size_t vBites)
 {
 	std::ofstream Fout(vFileName, std::ios::binary);
-	if (Fout.fail()) return false;
-
-	int NumElement = vData.size();
-	Fout.write((char*)&NumElement, sizeof(NumElement));
-	Fout.write((char*)vData.data(), vData.size()*sizeof(T));
+	if (Fout.fail()) { std::cout << "Fail to wirte data to file " << vFileName << std::endl; ; return false; }
+	Fout.write((const char*)vpBinaryData, vBites);
 	Fout.close();
 	return true;
 }
 
-static int cvMatTypeSize[] = {1,1, 2,2, 4,4, 8};
-template<typename MAT> bool writeBinaryData(const std::string& vFileName, const MAT& vMat, int vElementSize=0)
+
+bool readBinaryDataFromFile2Memory(const std::string& vFileName, void* &vopBuffer, size_t& vioBites)
 {
-	std::ofstream Fout(vFileName, std::ios::binary);
-	if (Fout.fail()) return false;
-
-	Fout.write((const char*)&vMat, sizeof(vMat));
-	if (0 == vElementSize)
-		vElementSize = cvMatTypeSize[vMat.type()] * vMat.channels();
-	int nRow = vMat.rows, nCol = vMat.cols;
-	if (vMat.isContinuous()) 
+	std::ifstream Fin(vFileName, std::ios::binary);
+	if (Fin.fail()) { std::cout << "Fail to read data from file " << vFileName << std::endl; ; return false; }
+	if (vioBites < 1)
 	{
-		nCol *= nRow;
-		nRow = 1;
+		Fin.seekg(0, std::ios_base::end);
+		vioBites = Fin.tellg();
+		Fin.seekg(0, std::ios_base::beg);
 	}
-
-	int RowSize = nCol * vElementSize;
-	for (int i=0; i<nRow; i++)
-	{
-		Fout.write((const char*)vMat.ptr(i), RowSize);
-	}
-	Fout.close();
+	if (NULL == vopBuffer) vopBuffer = malloc(vioBites);
+	Fin.read((char*)vopBuffer, vioBites);
+	Fin.close();
 	return true;
-}
-
-template<typename T> void readBinaryData(const std::string& vFileName, std::vector<T>& voDataAppanding, bool vClearBeforApand=true)
-{
-	std::ifstream Fin(vFileName, std::ios::binary);
-	if (Fin.fail()) return;
-	int NumElement = 0;
-	unsigned int SizeOfTagAndData=0, TagSize=0;
-	Fin.read((char*)&NumElement, sizeof(NumElement));
-
-	if (vClearBeforApand) voDataAppanding.resize(0);
-	unsigned int NumOld = voDataAppanding.size();
-	voDataAppanding.resize(NumOld + NumElement);
-	Fin.read((char*)(voDataAppanding.data()+NumOld), sizeof(T)*NumElement);
-	Fin.close();
-}
-
-template<typename MAT> 
-MAT readBinaryData(const std::string& vFileName, int vElementSize=0)
-{
-	std::ifstream Fin(vFileName, std::ios::binary);
-	if (Fin.fail()) return MAT();
-
-	void* pTemp = malloc(sizeof(MAT));
-	MAT* pT = (MAT*)pTemp;
-	unsigned int SizeOfTagAndData=0, TagSize=0;
-	Fin.read((char*)pT, sizeof(*pT));
-	int nRow = pT->rows, nCol = pT->cols;
-	if (0 == vElementSize) vElementSize = pT->channels()*cvMatTypeSize[pT->type()];
-  	MAT ResultDataMat(pT->rows, pT->cols, pT->type());
-	if (ResultDataMat.isContinuous()) 
-	{
-		nCol *= nRow;
-		nRow = 1;
-	}
-	int RowSize = nCol * vElementSize;
-	for (int i=0; i<nRow; i++)
-		Fin.read((char*)ResultDataMat.ptr(i), RowSize);
-
-	Fin.close();
-	free(pTemp);
-	return ResultDataMat;
 }
 
 
 std::string deleteExtentionName(const std::string& vFileName, bool vDotReserving, char vDot)
 {
-	int NewLength = vFileName.rfind(vDot);
+	char temp = 0;
+	auto pBegin = vFileName.crbegin(), pEnd = vFileName.crend();
+	for (; pBegin != pEnd; pBegin++)
+	{
+		temp = *pBegin;
+		if (temp == vDot || temp=='\\' || temp=='/') break;
+	}
+	std::string fileName = vFileName.substr(0, temp == vDot ? (pEnd-pBegin):vFileName.size());
 	if (vDotReserving)
-		NewLength++;
-	return vFileName.substr(0, NewLength);
+		fileName.push_back(vDot);
+	return fileName;
 }
 
 std::string extractExtentionName(const std::string& vFileName)

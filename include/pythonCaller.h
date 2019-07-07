@@ -1,68 +1,29 @@
 #pragma once
 #include <string>
-#include <vector>
-#include <Python.h>  
-#include "FileFunction.h"
-// typedef struct _object PyObject;
-class CPythonCaller
+#include <vector> 
+#include "Singleton.h"
+
+class CPythonCaller: public CSingleton<CPythonCaller>
 {
 public:
-	CPythonCaller(const std::string& vPythonFileName)
-	{
-		Py_Initialize();
-		PyRun_SimpleString("import sys");
-		std::string path = extractFilePath(vPythonFileName);
-		if (path.empty()) path = "./";
-		PyRun_SimpleString(("sys.path.append(\"" + path + "\")").c_str());
-		PyObject *pName, *pModule, *pDict, *pFunc, *pArgs, *pReturn;
-		std::string pythonFile = extractFileName(vPythonFileName);
-		pythonFile = deleteExtentionName(pythonFile, false);
-		pName = PyUnicode_DecodeFSDefault(pythonFile.c_str());
-		pModule = PyImport_Import(pName);
-		m_pPythonFunctions = PyModule_GetDict(pModule);
-		Py_DECREF(pModule);
-		Py_DECREF(pName);
-	}
-	~CPythonCaller()
-	{
-		Py_Finalize();
-	}
-	template<typename T>void appandSampleParameter(const T& v, const std::string& vFormat)
-	{
-		m_paraSet.push_back(Py_BuildValue(vFormat.c_str(), v));
-	}
-	void appandArrayParameter(void* vpData, const std::string& vFormat, int vBiytes)
-	{
-		Py_buffer *buf = (Py_buffer *)malloc(sizeof(*buf));
-		int r = PyBuffer_FillInfo(buf, NULL, vpData, vBiytes, 0, PyBUF_CONTIG);
-		PyObject *mv = PyMemoryView_FromBuffer(buf);
-		m_paraSet.push_back(mv);
-		m_paraSet.push_back(Py_BuildValue("s", vFormat.c_str()));
-		free(buf);
-	}
-	int call(const std::string& vFunctionName)
-	{
-		*pArgs;
-		PyObject* pFunc = PyDict_GetItemString(m_pPythonFunctions, vFunctionName.c_str());
-		pArgs = PyTuple_New(m_paraSet.size());
-		for (int i = 0; i < m_paraSet.size(); ++i)
-			PyTuple_SetItem(pArgs, i, m_paraSet[i]);
+	virtual ~CPythonCaller();
 
-		PyObject* pReturn = PyObject_CallObject(pFunc, pArgs);
-		int result = PyLong_AsLong(pReturn);
+	float getData(const std::string& vDataFileName, void* vop0Data, void* vop1Data = NULL);
+	float getData(const std::string& vDataFileName, std::vector<void*>& vBuffers);
+	void getData(const std::string& vDataFileName, std::vector<std::vector<float>>& voBuffers);
+	float call(const std::string& vFunctionName, std::vector<std::pair<void*, size_t>>& vBuffers, const std::string& vInfor="");
+	float call(const std::string& vFunctionName, std::vector<void*>& vBuffers, std::vector<size_t>& vBitesOfBuffers);
+	float call(const std::string& vFunctionName, void* vp0buffer, size_t v0size, void* vp1buffer=NULL, size_t v1size=0);
 
-		Py_DECREF(pArgs);
-		Py_DECREF(pReturn);
-		for (auto p : m_paraSet)
-			Py_DECREF(p);
-		m_paraSet.resize(0);
-		return result;
-	}
-protected:
 private:
-	PyObject * m_pPythonFunctions, *pArgs;
-	std::vector<PyObject *> m_paraSet;
+	CPythonCaller();
+	friend class CSingleton<CPythonCaller>;
+	void* __appandSampleParameter(const std::string& vFormat, ...);
+	void* __appandArrayParameter(void* vpData, int vBiytes);
+	void* m_pPythonFunctions;
 };
+
+
 
 
 /*

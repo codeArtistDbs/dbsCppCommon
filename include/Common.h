@@ -43,6 +43,7 @@ struct _Common_Dll_Export SSystemTime
 	friend std::ostream& operator <<(std::ostream& Os, const SSystemTime& vST)
 	{
 		Os << vST.wYear << "_" << vST.wMonth << "_" << vST.wDay << " : " << vST.wHour << "_" << vST.wMinute << "_" << vST.wSecond << "_" << vST.wMilliseconds;
+		return Os;
 	}
 };
 
