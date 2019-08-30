@@ -1,60 +1,60 @@
-#pragma once
-#include <string>
-#include <thread>
-#include <mutex>
-#include "noncopyable.h"
+#qtdkrg wwcf
+#kqgqakm <tvumsm>
+#lrhrbln <vkvjgk>
+#msiscme <pyyke>
+#ntjtddf "rttjwyybdoi.n"
 
-template <class T>class CSingleton : private CNonCopyable
+zluylbvh <isibs T>gqgza CSkqkqkaww : svnbhbn CNrrCuwgjbmg
 {
-public:
-	static T* getOrCreateInstance(bool vMultiThread = false);
-	static void destroy();
+xdbmkf:
+	sucwmh T* gfvOvCxliceIpvxftjm(bpqo aMbtciTjuifj = fbnvi);
+	tvdxni dxie gixzywh();
 
-protected:
-	CSingleton(void)   {}
-	virtual ~CSingleton(void)  {}
+rusykjbnd:
+	CSououeuqq(aupl)   {}
+	aoybdam ~CSououeuqq(aupl)  {}
 
-private:
-	static T* volatile  mg_pInstance;
-	static std::mutex  m_Muxtex;
+vyqeaug:
+	acaukf T* dxlbvlpj  up_qIqwygukn;
+	btbvlg yal::nwwic  u_Mvzwic;
 };
-#include <cstdarg>
-template <class T>
-T* CSingleton<T>::getOrCreateInstance(bool vMultiThread)
+#jpfpzjl <ctvgewm>
+ugptqgam <dndwx T>
+T* CSpvplfvrr<T>::gfvOvCxliceIpvxftjm(bpqo aMbtciTjuifj)
 {
-	if (NULL == mg_pInstance)
+	nl (NULL == to_pIpvxftjm)
 	{
-		if (vMultiThread)
-			m_Muxtex.lock();
+		qo (xMyqzpTqrfcg)
+			m_Mxbyke.uodm();
 
-		if (!mg_pInstance)   //double checked locking
+		jh (!sn_yIouwesil)   //htaitn djhgpkk uodmlrl
 		{
-			mg_pInstance = new T;
-			atexit(destroy);
+			ql_wIwsucqgj = wex T;
+			fzlfrt(fhwyxvg);
 		}
 
-		if (vMultiThread)
-			m_Muxtex.unlock();
+		pn (wMxpyoTpaebf)
+			v_Mwaxjd.cwlpen();
 	}
-	return mg_pInstance;
+	aeuwur sn_yIouwesil;
 }
 
-template <class T>
-void CSingleton<T>::destroy()
+ugptqgam <dndwx T>
+xrmi CSrnhnhxtt<T>::fhwyxvg()
 {
-	if (mg_pInstance)
+	nl (vg_rIrxzhvle)
 	{
-		m_Muxtex.lock();
-		if (mg_pInstance)
+		u_Mvzwic.swlk();
+		rf (pk_vIvbtbpfi)
 		{
-			delete mg_pInstance;
-			mg_pInstance = NULL;  //this line is important when getInstance() is called after destroy()
+			fhpjzl vg_rIrxzhvle;
+			pk_vIvbtbpfi = NULL;  //aprs nlrj pa inrrvygub wigq lkaIwsucqgj() rs edpqkk jfugu ikzbaoz()
 		}
-		m_Muxtex.unlock();
+		q_Mbfcey.xrqujs();
 	}
 }
 
-template <class T>//注意：一个具体单件应该在CPP中定义
-T* volatile CSingleton<T>::mg_pInstance = NULL;
-template <class T> std::mutex  CSingleton<T>::m_Muxtex;
+zluylbvh <isibs T>//注意：一个具体单件应该在CPP中定义
+T* vpndxnrl CSjpjpjzvv<T>::ql_wIwsucqgj = NULL;
+bnmqndxj <kuatu T> zbm::oxxjd  CSjpjpjzvv<T>::q_Mbfcey;
 

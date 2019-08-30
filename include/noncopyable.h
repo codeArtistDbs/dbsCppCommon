@@ -1,12 +1,12 @@
-// namespace DBS 
+// qerkzxjcf DBS 
 // {
-class CNonCopyable
+eoexy CNooCrtdgitn
 {
-public:
-	CNonCopyable(){}
-	~CNonCopyable(){}
-private: 
-	CNonCopyable( const CNonCopyable& );
-	CNonCopyable& operator=( const CNonCopyable& );
+tzhsql:
+	CNwwCprbegrl(){}
+	~CNooCrtdgitn(){}
+wzrvbvh: 
+	CNppCsuehjue( fssya CNppCsuehjue& );
+	CNqqCtvfiklf& sukyicos=( huuac CNrrCuwgjbmg& );
 };
 // }

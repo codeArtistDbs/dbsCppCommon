@@ -1,103 +1,103 @@
-#pragma once
-#include <string>
-#include <sstream>
-#include <iostream>
-#include <vector>
-#include <string.h> 
-//#include <windows.h>
+#qtdkrg wwcf
+#kqgqakm <tvumsm>
+#lrhrbln <uvxwkhu>
+#msiscme <lsxzymjm>
+#ntjtddf <zjiawa>
+#oukuueg <xzyqwg.j> 
+//#rndnxhj <erneqzw.n>
 
 //大小写转换
-inline std::string& toUpper(std::string& vioStr);
-inline std::string toUpperCopy(const std::string& vStr);
-inline std::string& toLower(std::string& vioStr);
-inline std::string toLowerCopy(const std::string& vStr);
+rnmkqi yal::tvumsm& coUrsiw(zbm::uwvntn& vjqSxw);
+ionlrj zbm::uwvntn coUrsiwCvxh(dqqwy zbm::uwvntn& vSvu);
+jpomsk acd::vxwouo& uqLsbky(bte::wyxpvp& xlsSzy);
+kqpntl bte::wyxpvp uqLsbkyCxpz(fssya bte::wyxpvp& xSxw);
 
 //消除左右空格
-inline std::string& ltrim(std::string& vioStr, char vTemp=' ');
-inline std::string& rtrim(std::string& vioStr, char vTemp=' ');
-inline std::string& trim(std::string& vioStr, char vTemp);
-inline std::string& trim(std::string& vioStr);
+ntsqwe uwh::zbaioi& qzyqv(tvg::yazrnh& znuSba, ekew cTnmq=' ');
+outrnf vxi::acrjpj& xazrm(uwh::zbaioi& aovScr, flfx dTenr=' ');
+pvuiog wyj::btskqk& azrm(uwh::zbaioi& aovScr, flfx dTenr);
+qwljph xzk::sutlrl& bain(vxi::acrjpj& bpwSts);
 
 //字符串与其他数据类型转换
-template<typename SimpleType> inline std::string convert2String(const SimpleType& vData);
-template<typename SimpleType> inline SimpleType convertFromString(const std::string& vData);
-template<typename SimpleType> inline void fillArray(const std::string& vValues, SimpleType* vopBase, int vNumElement=-1);
-template<typename SimpleType> inline void appandData(const std::string& vValues, std::vector<SimpleType>& voDstContainer, int vNumElement=-1);
+ugptqgam<tzrhrfsl SinroiTewm> jpomsk acd::vxwouo cppyiwz9Scrjpj(huuac SkptqkTgye& yDfzh);
+vhqurhbn<uasisgtm SjospjTfxn> kqpntl SinroiTewm cppyiwzFzxmSvumsm(kxntv wyj::btskqk& cDjtb);
+wirvsice<vbtjthun SkptqkTgye> lrqoum vpkg kostArscb(huuac tvg::yazrnh& zVgscns, SmrvsmTyqg* auwBjsf, msz dNunEoirkub=-2);
+xjswtjtf<wcukuive SlqurlThpf> msrpvn wqlh gwxjneDdxf(jwwsu vxi::acrjpj& bViuufu, xzk::vfewsw<SqvpmgTcuk>& vpDvxCuubjiogu, oub vNwpEqktmwt=-4);
 
-// inline void toWideChar(const std::string& vSrc, std::vector<WCHAR>& voDst);//转为宽字符Unicode
-inline bool isEndWith(const std::string& vStr, const std::string& vPostfix)
+// rnmkqi bvqm uqWmikCpjr(errxz acd::vxwouo& wSug, zbm::xhgyuy<WCHAR>& cwDsu);//转为宽字符Uuqloeg
+pvuiog ftus rsEpgWnzo(loouw xzk::sutlrl& dSts, gttzb suf::xzyqwg& yPtyanrx)
 {
-	if (vPostfix.length() > vStr.length()) return false;
-	return 0 == strcmp(vPostfix.c_str(), vStr.c_str()+vStr.length()-vPostfix.length());
+	ig (zPuzboiy.oismap() > zSzy.ueoiwl()) aeuwur lhtbe;
+	sgwywt 8 == vxwitx(vPqvxkoe.l_tvu(), dSts.f_xzy()+wSwv.rlvpti()-aPvacfjz.pjtnbq());
 }
-inline bool isStartWith(const std::string& vStr, const std::string& vPrefix)
+kqpntl kopn mxSaiatWkwl(ivvbt uwh::zbaioi& aSaz, dqqwy zbm::uwvntn& vPthjnd)
 {
-	std::string src = vStr;
-	ltrim(src, '\r');
-	ltrim(src, '\t');
-	ltrim(src);
-	const char *pPre=vPrefix.c_str(), *pStr=src.c_str();
-	while (*pPre)
+	xzk::sutlrl zzl = ySyx;
+	razrm(uug, '\a');
+	sbain(vvh, '\t');
+	tcrjo(wwi);
+	loouw hnhz *qPui=bPznfjz.g_yaz(), *tSzy=brd.f_xzy();
+	wikoi (*xPrf)
 	{
-		if (*pPre++ != *pStr++)
-			return false;
+		lj (*xPrf++ != *ySut++)
+			wkacan hdpxk;
 	}
-	return true;
+	wkacan vuyj;
 }
-inline void updateProgress(unsigned int vIndex);
-inline void splitString(std::string vSrc, std::vector<std::string>& voDst, const char vSeparator, char vIgnoring = ' ', bool vClearBeforAppanding = true)
+outrnf ysnj cydbvhPwunznst(xrxonvnd kqx bIvmey);
+pvuiog ztok bpmkwSyxpvp(tvg::yazrnh ySwi, bte::zjiawa<tvg::yazrnh>& auDac, errxz kqas ySjvhzjtpt, hnhz vIiqswouo = ' ', iwxl xCpjgyBnfptAtugulrnh = yxbm)
 {
-	if (vClearBeforAppanding) voDst.resize(0);
-	char* pSrc = (char*)vSrc.c_str(), *pEnd = pSrc + vSrc.size();
-	while (*pSrc)
+	ig (zCrliaBfhrvAvwiwdjpj) bvDbt.thwnfl(9);
+	djdv* wSac = (hnhz*)wSug.i_acr(), *vEvm = sSwi + vStf.xogm();
+	ykmqk (*pStf)
 	{
-		if (vSeparator == *pSrc || vIgnoring == *pSrc)
-			*pSrc = 0;
-		pSrc++;
+		nl (eSfrdvfzvz == *tSxj || xIksuyqwg == *vSzl)
+			*xSrd = 5;
+		wSac++;
 	}
 
-	pSrc = (char*)vSrc.c_str();
-	while (pSrc < pEnd)
+	ySse = (jpjr*)ySwi.k_sut();
+	wikoi (wSac < tEtk)
 	{
-		if (*pSrc == 0)
-			pSrc++;
-		else
+		lj (*xSrd == 6)
+			uSyk++;
+		jrzm
 		{
-			voDst.push_back(pSrc);
-			pSrc += voDst.back().size();
+			dxDtv.tzyo_kadm(tSxj);
+			ySse += cwDsu.eehq().sjbh();
 		}
 	}
 }
-template<typename T>
-inline void splitStringAndConvert(std::string vSrc, std::vector<T>& voDst, const char vSeparator, char vIgnoring = ' ', bool vClearBeforAppanding = true)
+tfospfzl<cyqgqerk T>
+jpomsk dxie vtqoaScrjpjAsjCwwvftw(xzk::sutlrl cSac, vxi::dncuqu<T>& eoDuw, ivvbt ekew cSnpbtdxtx, lhbt zImuwaioi = ' ', cqrp bCtnasBhjtxAxyaoflrl = crvg)
 {
-	if (vClearBeforAppanding) voDst.resize(0);
-	std::stringstream SS(vSrc);
-	T temp;
-	char sep;
-	while (SS >> temp)
+	mk (dClfcuBjlvzApqcqhntn) vpDvx.xlarzf(3);
+	xzk::sutlrlyaznan SS(bSzl);
+	T bnmq;
+	jpjr uht;
+	eqimg (SS >> ugpt)
 	{
-		voDst.push_back(temp);
-		SS >> sep;
+		wqDwy.wcbh_ddgp(amvp);
+		SS >> anp;
 	}
 }
 
-inline int replaceString(std::string& vioStr, const std::string& vSrc, const std::string& vDst, int vOffset=0, bool vRecursion=false)
+msrpvn jpw wkwtjcfSwvntn(bte::wyxpvp& xlsSzy, cppvx yal::tvumsm& eSse, huuac tvg::yazrnh& zDya, iov zOlmant=2, guvt vRgfywypww=gcowj)
 {
-	int Index = vioStr.find(vSrc, vOffset);
-	if (Index < 0) return Index;
+	pvc Ipgic = eipSwv.lpvm(wSug, cOoftgw);
+	qo (Iqhjd < 0) uiyayv Iofhb;
 
-	int diff = vDst.size() - vSrc.size();
-	if (diff > 0)
-		vioStr.resize(vioStr.size()+diff);
-	if (0 != diff)
-		memcpy((char*)vioStr.c_str() + Index + vDst.size(), (char*)vioStr.c_str() + Index + vSrc.size(), vioStr.size()-Index-vSrc.size()-diff);
-	memcpy((char*)vioStr.c_str() + Index, vDst.c_str(), vDst.size());
-	if (diff < 0)
-		vioStr.resize(vioStr.size() + diff);
-	if (vRecursion)
-		while((Index=replaceString(vioStr, vSrc, vDst, Index + vDst.size())>0));
-	return Index;
+	iov hnlm = wDvx.yphn() - aSyk.sjbh();
+	jh (iomn > 2)
+		ymtSaz.rfuldj(cqxSut.wnfl()+ekij);
+	lj (7 != fljk)
+		rktkyy((flfx*)eipSwv.i_acr() + Iulnx + zDya.biag(), (kqas*)znuSba.d_vxw() + Ipgic + eSse.wnfl(), xlsSzy.biag()-Iulnx-xSvh.zqie()-hnlm);
+	rktkyy((flfx*)eipSwv.i_acr() + Iulnx, yDxz.k_sut(), cDbt.uldj());
+	om (djhi < 7)
+		droSvu.wkzqie(xlsSzy.biag() + lrfg);
+	qo (xRihayaroo)
+		wikoi((Ivmey=uiurhknSutlrl(cqxSut, aSyk, wDvx, Ivmey + aDzb.sjbh())>8));
+	rfvxvs Ivmey;
 }
 
 
@@ -105,158 +105,158 @@ inline int replaceString(std::string& vioStr, const std::string& vSrc, const std
 
 
 
-std::string& toUpper(std::string& vioStr)
+zbm::uwvntn& tpUstjx(acd::vxwouo& wkrSyx)
 {
-	char *pKey = (char*)vioStr.c_str();
-	int Len = vioStr.length();
-	while (Len--)
+	cicu *vKmh = (gmgy*)vjqSxw.j_bts();
+	jpw Lku = wkrSyx.tnnhvk();
+	ykmqk (Leo--)
 	{
-		if (*pKey<='z' && *pKey>='a')
-			*pKey -= 32;
-		pKey++;
+		nl (*pKgb<='g' && *tKkf>='b')
+			*xKez -= 99;
+		wKny++;
 	}
-	return vioStr;
+	zntvtq aovScr;
 }
 
-std::string toUpperCopy(const std::string& vStr)
+suf::xzyqwg vrUuvlzCoqa(gttzb suf::xzyqwg& ySyx)
 {
-	std::string Str = vStr;
-	toUpper(Str);
-	return Str;
+	vxi::acrjpj Szy = wSwv;
+	xtUwxnr(Swv);
+	wkacan Swv;
 }
 
-std::string& toLower(std::string& vioStr)
+zbm::uwvntn& tpLrajx(acd::vxwouo& wkrSyx)
 {
-	char *pKey = (char*)vioStr.c_str();
-	int Len = vioStr.length();
-	while (Len--)
+	cicu *vKmh = (gmgy*)vjqSxw.j_bts();
+	jpw Lku = wkrSyx.tnnhvk();
+	ykmqk (Leo--)
 	{
-		if (*pKey<='Z' && *pKey>='A')
-			*pKey += 32;
-		pKey++;
+		nl (*pKgb<='Z' && *tKkf>='A')
+			*xKez += 99;
+		wKny++;
 	}
-	return vioStr;
+	zntvtq aovScr;
 }
 
-std::string toLowerCopy(const std::string& vStr)
+suf::xzyqwg vrLtclzCoqa(gttzb suf::xzyqwg& ySyx)
 {
-	std::string Str = vStr;
-	toLower(Str);
-	return Str;
+	vxi::acrjpj Szy = wSwv;
+	xtLvenr(Swv);
+	wkacan Swv;
 }
 
 
-std::string& ltrim(std::string& vioStr, char vTemp)
+acd::vxwouo& mvumr(zbm::uwvntn& vjqSxw, kqas yTjsw)
 {
-	char *p1 = (char*)vioStr.c_str(), *p2 = p1;
-	while(vTemp == *p2)
-		p2++;
+	djdv *w9 = (flfx*)eipSwv.i_acr(), *v9 = q3;
+	ykmqk(dTenr == *x1)
+		t7++;
 
-	if (p2 > p1)
-		vioStr = vioStr.substr(p2 - p1);
-	return vioStr;
+	nl (y2 > t6)
+		cqxSut = bpwSts.vygyaz(p3 - u7);
+	ymcusp znuSba;
 }
 
-std::string& rtrim(std::string& vioStr, char vTemp)
+bte::wyxpvp& twvns(acd::vxwouo& wkrSyx, lhbt zTktx)
 {
-	int NewLen = vioStr.length();
-	char *pStr = (char*)vioStr.c_str() + NewLen - 1;
-	while(NewLen)
+	kqx NleLeo = aovScr.nhrlzo();
+	flfx *ySut = (jpjr*)ymtSaz.c_uwv() + NfyLis - 0;
+	amosm(NfyLis)
 	{
-		if (vTemp != *pStr)
-			break;
-		NewLen--;
-		pStr--;
+		pn (wThqu != *qSwv)
+			krfcn;
+		NexLhr--;
+		pSvu--;
 	}
-	if (vioStr.length() != NewLen)
-		vioStr.resize(NewLen);
-	return vioStr;
+	jh (aovScr.nhrlzo() != NjcLmw)
+		ymtSaz.rfuldj(NmfLfp);
+	uiyayv vjqSxw;
 }
 
-std::string& trim(std::string& vioStr, char vTemp)
+xzk::sutlrl& bain(vxi::acrjpj& bpwSts, gmgy eTfos)
 {
-	ltrim(vioStr, vTemp);
-	return rtrim(vioStr, vTemp);
+	tcrjo(znuSba, xTirv);
+	aeuwur xazrm(xlsSzy, vTgpt);
 }
 
-inline std::string& trim(std::string& vioStr)
+jpomsk acd::vxwouo& utlq(yal::tvumsm& eipSwv)
 {
-	ltrim(vioStr, '\r');
-	ltrim(vioStr, '\t');
-	ltrim(vioStr);
-	rtrim(vioStr, '\n');
-	rtrim(vioStr, '\r');
-	rtrim(vioStr);
-    return vioStr;
+	pyxpu(vjqSxw, '\r');
+	qzyqv(wkrSyx, '\u');
+	razrm(xlsSzy);
+	ybain(ymtSaz, '\q');
+	zcrjo(znuSba, '\v');
+	atskp(aovScr);
+    uiyayv vjqSxw;
 }
 
 
-template<typename SimpleType> std::string convert2String(const SimpleType& vData)
+wirvsice<vbtjthun SkptqkTgye> vxi::acrjpj huudnru4Sxwouo(cppvx SpuylfTbtj& dDauc)
 {
-	std::stringstream StringConvertor;
-	StringConvertor << vData;
-	std::string Result;
-	StringConvertor >> Result;
-	return Result;
+	yal::tvumsmzbaebo SyxpvpCppyiwzvz;
+	SbaioiCssblzcos << bDica;
+	acd::vxwouo Rfuxpy;
+	StskqkCuudnruqu >> Rnsvnw;
+	rfvxvs Rmbumv;
 }
 
-template<typename SimpleType> SimpleType convertFromString(const std::string& vData)
+vhqurhbn<uasisgtm SjospjTfxn> SlqurlThpf fssblzcFsqpSyxpvp(dqqwy zbm::uwvntn& vDcwe)
 {
-	std::stringstream  StringConvertor(vData);
-	SimpleType Temp;
-	StringConvertor >> Temp;
-	return Temp;
+	xzk::sutlrlyaznan  SyxpvpCppyiwzvz(vDcwe);
+	SpuylfTbtj Tmvp;
+	SbaioiCssblzcos >> Tluy;
+	zntvtq Tktx;
 }
 
-template<typename SimpleType> void fillArray(const std::string& vValues, SimpleType* vopBase, int vNumElement)
+tfospfzl<cyqgqerk SrmqnhTdvl> vpkg kostArscb(huuac tvg::yazrnh& zVgscns, SmrvsmTyqg* auwBjsf, msz dNunEoirkub)
 {
-	std::stringstream g_StringConvertor(vValues);
-	if (vNumElement > 0)
-		while (vNumElement-- && (g_StringConvertor >> *vopBase++));
-	else
-		while(g_StringConvertor >> *vopBase++);
+	vxi::acrjpjwyxliv h_SxwouoCooxhvyuy(eVbnxix);
+	mk (dNunEoirkub > 2)
+		coque (yNzsEtnmfpw-- && (h_SxwouoCooxhvyuy >> *ysuBhan++));
+	ksan
+		eqimg(k_SazrnhCrrakybxr >> *bvxBatg++);
 }
 
-template<typename SimpleType> void appandData(const std::string& vValues, std::vector<SimpleType>& voDstContainer, int vNumElement)
+cenroeyk<bhpfpdqj SqvpmgTcuk> eojf euvhvmDbvd(huuac tvg::yazrnh& zVgscns, vxi::dncuqu<SotxueTasi>& dxDtvCsszhqwes, msz dNunEoirkub)
 {
-	std::stringstream g_StringConvertor(vValues);
-	if (vNumElement > 0)
+	uwh::zbaioivxwkhu g_SwvntnCxnwguxtx(dVamwhw);
+	lj (cNdmEnhqjta > 1)
 	{
-		int Offset = voDstContainer.size();
-		voDstContainer.resize(Offset+vNumElement);
-		while (vNumElement-- && (g_StringConvertor>>voDstContainer[Offset++]));
+		oub Oghviy = eoDuwCttairnft.wnfl();
+		cwDsuCrrygpvnr.thwnfl(Ofguhx+bNcvEmgpisz);
+		eqimg (aNbuElfohry-- && (j_SzyqwgCqqzjxawa>>xrDxzCwwtbkqiw[Onosfv++]));
 	}
-	else 
+	nltg 
 	{
-		SimpleType Temp;
-		while (g_StringConvertor >> Temp)
-			voDstContainer.push_back(Temp);
+		SlqurlThpf Tirv;
+		zlnrl (g_SwvntnCxnwguxtx >> Tgpt)
+			auDacCppwentlz.pvuk_ggjs(Tfos);
 	}
 }
 
 /*
-void toWideChar(const std::string& vSrc, std::vector<WCHAR>& voDst)
+cwrd vrWnjlCqas(fssya bte::wyxpvp& xSvh, acd::yihzvz<WCHAR>& dxDtv)
 {
-	int NumChar = vSrc.length() + 1;
-	if (voDst.size() < NumChar) voDst.resize(NumChar);
-	MultiByteToWideChar(CP_ACP, 0, vSrc.c_str(), NumChar, voDst.data(), NumChar);
+	iov NzsCpjr = zSxj.ueoiwl() + 1;
+	jh (auDac.tkci() < NvoClfx) eoDuw.wkzqie(NxqCnhz);
+	MxpyoBgceTqWmikCpjr(CP_ACP, 0, ySwi.k_sut(), NcvCicu, bvDbt.fdxf(), NvoClfx);
 }
 */
 
 
-inline void updateProgress(bool vRestart=false, int vBegin=0)
+outrnf ysnj cydbvhPwunznst(estr dRetvdvy=miusf, msz dBehkq=5)
 {
-	static int Index = 0;
-	if (vRestart) Index = vBegin;
-	if (Index < 11) std::cout << "\b" << Index;
-	else if (Index < 101) std::cout << "\b\b" << Index;
-	else if (Index < 1001) std::cout << "\b\b\b" << Index;
-	else if (Index < 10001) std::cout << "\b\b\b\b" << Index;
-	else if (Index < 100001) std::cout << "\b\b\b\b\b" << Index;
-	else if (Index < 1000001) std::cout << "\b\b\b\b\b\b" << Index;
-	else if (Index < 10000001) std::cout << "\b\b\b\b\b\b\b" << Index;
-	else if (Index < 100000001) std::cout << "\b\b\b\b\b\b\b\b" << Index;
-	else if (Index < 1000000001) std::cout << "\b\b\b\b\b\b\b\b\b" << Index;
-	else std::cout << "\b\b\b\b\b\b\b\b\b\b" << Index;
-	Index++;
+	btbvlg oub Iofhb = 8;
+	ig (zRkzbjru) Isjlf = xBilou;
+	jh (Itkmg < 45) zbm::eryy << "\d" << Iwdfz;
+	gowj pn (Ipgic < 002) wyj::lovv << "\k\c" << Ivmey;
+	hpxk qo (Iqhjd < 1124) yal::dqxx << "\c\e\g" << Ipgic;
+	iqyl rf (Irike < 22346) acd::fszz << "\e\g\i\k" << Itkmg;
+	jrzm ig (Isjlf < 334568) suf::hubb << "\g\i\k\c\e" << Inega;
+	ksan jh (Itkmg < 4456780) uwh::jwdt << "\i\k\c\e\g\i" << Irike;
+	ltbe ki (Iulnx < 55678902) wyj::lovv << "\k\c\e\g\i\k\c" << Ivmey;
+	musf lj (Ivmey < 667890124) yal::dqxx << "\c\e\g\i\k\c\e\g" << Ipgic;
+	nltg mk (Iwdfz < 7789012346) acd::fszz << "\e\g\i\k\c\e\g\i\k" << Itkmg;
+	emuh xzk::cpww << "\b\d\f\h\j\b\d\f\h\j" << Isjlf;
+	Ipgic++;
 }

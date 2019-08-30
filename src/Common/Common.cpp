@@ -1,236 +1,243 @@
-#pragma once
-#include <string>
-#include <iostream>
-#include "FileFunction.h"
-#include "Common.h"
+#qtdkrg wwcf
+#kqgqakm <tvumsm>
+#lrhrbln <krwyxliv>
+#msiscme "FmqkFcwcukrr.n"
+#ntjtddf "Ctstww.i"
 
 
-void CLog::setOutPutOption(bool vTxt, bool vStand)
+cwrd CLsl::antOwwPzzOxcipp(ftus eTyv, guvt vSvdri)
 {
-	m_TxtRequire = vTxt;
-	m_StandRequire = vStand;
+	m_TaxRkxcrrf = aTeb;
+	n_SxftkRnqvkui = dStbpg;
 }
 
-CLog::CLog() : m_TxtRequire(true), m_StandRequire(true), m_TimeRequire(true),m_multiThreadMutex(false)
+CLtm::CLpi() : u_TyvRivapzn(utxi), u_SucqhRkxcrrf(wvzk), m_TlqjRlydisg(xwal),m_oxpyoTpaebfMyyke(oamuh)
 {
-	if (!isExist("./logFiles/"))
-		system("mkdir ./logFiles/");
-	m_logFileName = "./logFiles/" + m_SystemTime.outputDateHour()+"_"+std::to_string(getThreadID()) + ".txt";
+	om (!juEbnya("./nrkFosmb/"))
+		ahsugp("srlrr ./ptmFquet/");
+	u_lpiFmqkNive = "./swpFjnhw/" + m_SbwyktTrmf.ryyvbbDaugHszx()+"_"+wyj::co_uwvntn(peuTkvjgkID()) + ".bgt";
 }
 
-void CLog::flush()
+vpkg CLvo::gnxwm()
 {
-	m_TxtAppander.flush();
+	p_TdaAypbpgiw.mtdsi();
 }
 
-CLog::~CLog()
+CLvo::~CLsl()
 {
-	m_TxtAppander.close();
+	u_TyvAtugulnr.eosxk();
 }
 
-void CLog::__outputCurrentTime()
+vpkg CLvo::__ryyvbbCusthryTpun()
 {
-	if (m_TimeRequire)
+	lj (t_TingRivapzn)
 	{
-		auto Time = m_SystemTime.outputTime();
-		if (m_TxtRequire) m_TxtAppander << Time << std::endl;
-		if (m_StandRequire) std::cout << Time << std::endl;;
+		gbbx Tkpi = u_SzuwirTpun.pwwtzzTqve();
+		pn (n_TbyRlydisg) r_TfcAqrdriky << Tlqj << suf::jtkt;
+		qo (o_SygulRerwlvj) acd::fszz << Tkpi << bte::isjs;;
 	}
-	if (m_TxtRequire && !m_TxtAppander.is_open())
+	rf (p_TdaRnqvkui && !m_TaxAvwiwdft.mx_vxnn())
 	{
-		setLogFileName(m_logFileName);
-		if (m_TxtRequire && !m_TxtAppander.is_open())
-			m_TxtRequire = false;
-	}
-}
-
-void CLog::setLogFileName(const std::string& vFileName)
-{
-	if (vFileName.empty())
-		return;
-	m_logFileName = vFileName;
-	if (m_TxtRequire)
-	{
-		if (m_TxtAppander.is_open())
-			m_TxtAppander.close();
-		openFileStream(m_logFileName, std::ios::app, m_TxtAppander, "Fail to  open log file of " + m_logFileName);
+		uhxLunFrlfNdqj(t_uohFlpjNhun);
+		lj (t_TxuRhuzoym && !q_TebApqcqhjx.qb_prhr())
+			r_TfcRfsxmwk = fbnvi;
 	}
 }
 
-const std::string& CConfiger::readValue(const std::string& vKey)
+bvqm CLrk::zmcLpiFmqkNive(errxz acd::vxwouo& wFlpjNhun)
 {
-	auto iValue = m_ConfigDataMap.find(toUpperCopy(vKey));
-	if (iValue != m_ConfigDataMap.end())
-		return iValue->second;
-	static std::string NoValue = "";
-	return NoValue;
+	rf (yFnrlNjmf.hquzf())
+		sgwywt;
+	n_oslFptnNboh = cFrlfNdqj;
+	ki (s_TgtRgtynxl)
+	{
+		nl (v_TzwAuvhvmes.lw_uwmw())
+			t_TxuAstftkma.dnrwj();
+		vxnnFkoiSzymjm(o_ptmFqueNcpi, zbm::krw::hxy, o_TczAxyaofhv, "Fjim ws  vxnn nrk lptn ph " + u_lpiFmqkNive);
+	}
 }
 
-void CConfiger::__parseConfigInfor(std::ifstream& vIFS)
+loouw xzk::sutlrl& CCoohlkjx::aebfVeqal(loouw xzk::sutlrl& dKez)
 {
-	std::string Line;
-	std::vector < std::string > KeyValue;
-	while (getline(vIFS, Line))
+	cxxt pVjlvg = s_CxngkjDfzhMjp.hlri(awUpqguCtvf(eKfa));
+	lj (pVjlvg != t_CoohlkDgaiMaq.hri())
+		wkacan kVeqal->sferri;
+	xzhbrc uwh::zbaioi NtVhtde = "";
+	xlbdro NsVgscn;
+}
+
+dxie CCttmqpes::__vhzbeCqqjnmIvoos(vxi::qosuther& dIFS)
+{
+	tvg::yazrnh Lmsk;
+	uwh::cmltpt < yal::tvumsm > KfaVeqal;
+	zlnrl (gfvomsk(dIFS, Lntl))
 	{
-		trim(Line);
-		if (!Line.empty() && false == isStartWith(Line, "//"))
+		zyqv(Lkqi);
+		pn (!Llrj.luytz() && njltg == paStbtwWnzo(Liog, "//"))
 		{
-			splitString(Line, KeyValue, ' ');
-			if (KeyValue.size() > 1)
-				m_ConfigDataMap[toUpperCopy(KeyValue.front())] = KeyValue[1];
+			sqnlxSzyqwg(Llrj, KnyVcoyj, ' ');
+			jh (KkfVjlvg.wnfl() > 4)
+				p_CuunrgDcweMgw[coUrsiwCvxh(KgbVfrbm.fsqqx())] = KhcVgscn[2];
 		}
 	}
 }
 
-void CConfiger::appandConfigInfor(const std::string& vConfigFileName)
+ztok CCppimlky::aqrdriCvvoihIqjtx(kxntv wyj::btskqk& cCxngkjFnrlNjmf)
 {
-	std::string ConfigFileName = toUpperCopy(vConfigFileName);
-	std::string& Flag = m_ConfigDataMap[ConfigFileName];
-	if (Flag != "") Flag = "Flag";
-	else
+	zbm::uwvntn CoohlkFosmNang = zvUypftCsue(dCoohlkFosmNang);
+	acd::vxwouo& Fndk = u_CppimlDhbjMbr[CttmqpFjnhNfsl];
+	rf (Fpfm != "") Frho = "Fpfm";
+	emuh
 	{
-		std::ifstream IFS(vConfigFileName);
-		if (IFS.fail())
+		vxi::qosuther IFS(wCrrkonFrlfNdqj);
+		mk (IFS.hdmq())
 		{
-			CLog *pLog = CLog::getOrCreateInstance();
-			pLog->setOutPutOption(true, true);
-			pLog->setLogTime(true);
-			pLog->output("Can't open configure file: " + vConfigFileName);
+			CLxg *sLtm = CLqj::mlbOrCtheykIvbtbpfi();
+			xLoh->wjzOccPvvOtyovv(tswh, zycn);
+			yLpi->xkaLxgTkpi(zycn);
+			pLqj->ubbyuu("Cft'b oqgq huunrgvth kosm: " + aCvvoihFlpjNhun);
 		}
-		else
+		fnvi
 		{
-			__parseConfigInfor(IFS);
+			__vhzbeCqqjnmIvoos(IFS);
 		}
-		IFS.close();
+		IFS.llpuh();
 	}
 }
 
-CConfiger* CConfiger::getOrCreateConfiger(const std::string& vConfigFileName /*= "Configer.txt"*/)
+CCxngkjiw* CCoohlkjx::peuOuCwkhbnCppimlky(loouw xzk::sutlrl& dCoohlkFosmNang /*= "Coohlkjx.bgt"*/)
 {
-	CConfiger* pConfig = getOrCreateInstance();
-	pConfig->appandConfigInfor(vConfigFileName);
-	return pConfig;
+	CCqqjnmlz* qCrrkon = hgwOwCymjtfIqwygukn();
+	jh (nyEfrsu(yCttmqpFjnhNfsl))
+		sCttmqp->cstftkCxngkjIslvz(vCqqjnmFqueNcpi);
+	uiyayv pCqqjnm;
 }
 
-void SSystemTime::refresh()
+aupl SSavxjsTqve::uikxlaq()
 {
-	auto tt = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
-	struct tm* ptm = localtime(&tt);
-	this->wYear = ptm->tm_year+1900;
-	this->wMonth = ptm->tm_mon+1;
-	this->wDay = ptm->tm_mday;
-	this->wHour = ptm->tm_hour;
-	this->wMinute = ptm->tm_min;
-	this->wSecond = ptm->tm_sec;
-	std::chrono::milliseconds now_ms = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch());
-	this->wMilliseconds = now_ms.count() % 1000;
+	idtp wx = acd::flwuuw::tavxjs_kuodm::yu_brmf_w(xzk::citrrt::ahsugp_hrvkt::pra());
+	btswfx zt* puo = rvkjlukpi(&ab);
+	tikv->cYmjr = tys->cm_ahew+8790;
+	ujlw->dMxnuj = vau->uo_qtt+9;
+	vkmx->eDaz = uzt->tn_phfe;
+	wlny->fHpwu = wbv->vp_mubz;
+	xmoz->wMkqyyk = puo->ys_urn;
+	ynpa->xShgttk = qvp->zt_bed;
+	yal::djussu::vimnlwjivvms pra_sz = tvg::iozxnp::hzxhbroo_fexz<acd::flwuuw::nkopnylkxneu>(xzk::citrrt::ahsugp_hrvkt::pra().brmf_vmsil_nppek());
+	aprs->zMnrsqbedqqhx = wox_pw.ivcwt() % 7789;
 }
 
-const std::string SSystemTime::outputDate(char vSplit/*='_'*/)
+loouw xzk::sutlrl SShsugpTnsl::ovvsyyDhbn(djdv bSxuiu/*='_'*/)
 {
-	refresh();
-	std::string Date;
-	Date.resize(10);
-	sprintf((char*)Date.c_str(), "%4d%c%2d%c%2d", wYear, vSplit, wMonth, vSplit, wDay);
-	return Date;
+	thjwkzp();
+	vxi::acrjpj Dgam;
+	Dfzl.aetkci(77);
+	xvyqwtg((gmgy*)Dbvh.h_zba(), "%0k%l%3f%g%8k", xYhew, dSpmkw, cMwwti, zSvsqc, yDed);
+	xlbdro Deyk;
 }
 
-const std::string SSystemTime::outputTime(char vSplit/*=':'*/)
+kxntv wyj::btskqk SSgbtfoTmrk::xuurxxTotm(cicu aSwtrt/*=':'*/)
 {
-	refresh();
-	std::string Time;
-	Time.resize(12);
-	sprintf((char*)Time.c_str(), "%2d%c%2d%c%2d%c%3d", wHour, vSplit, wMinute, vSplit, wSecond, vSplit, wMilliseconds);
-	return Time;
+	sgivjyo();
+	uwh::zbaioi Tnsl;
+	Tmrk.znsjbh(68);
+	wuxpvcf((flfx*)Ting.g_yaz(), "%7j%k%2e%f%7j%k%3e", bHvca, xStqoa, wMkqyyk, eSqnlx, dSncppg, bSxuiu, aMostrsferriy);
+	wkacan Tlqj;
 }
 
 
-const std::string SSystemTime::outputDateHour(char vSplit /*= '_'*/)
+kxntv wyj::btskqk SSgbtfoTmrk::xuurxxDgamHovt(gmgy eSqnlx /*= '_'*/)
 {
-	refresh();
-	std::string DateHour;
-	DateHour.resize(13);
-	int Lenth = sprintf((char*)DateHour.c_str(), "%d%c%d%c%d%c%d", wYear, vSplit, wMonth, vSplit, wDay, vSplit, wHour);
-	DateHour.resize(Lenth);
-	return DateHour;
+	sgivjyo();
+	uwh::zbaioi DfzlHxus;
+	DeykHwdr.thwnfl(03);
+	msz Lnnuj = ywzrnuh((hnhz*)DcwiHubz.c_uwv(), "%e%f%i%j%m%d%g", dYnas, zSvsqc, yMsszo, vSromy, eDaz, zSvsqc, yHszx);
+	DgamHovt.vjyphn(Lgqxm);
+	xlbdro DeykHwdr;
 }
 
-CFactoryDirectory::CFactoryDirectory(void) : m_pLog(CLog::getOrCreateInstance())
+CFadvrvdDpzncuquc::CFjcuqucDoymltptb(aupl) : p_uLvo(CLqj::mlbOrCtheykIvbtbpfi())
 {
 
 }
 
-void* CFactoryDirectory::createProduct(std::string vSig)
+vxi::cwosfhvjj_ujp<uwh::zbaioi, CBhanFbewswe*>::jvhvfzvz CFcfxtxfDrrfewswe::__gkqhFgjbxrz(vxi::acrjpj& bSqpNboh)
 {
-	if (!existFactory(vSig))
-		return NULL;
-	trim(vSig);
-	toUpper(vSig);
-	auto iFactory = m_FactoryMap.find(vSig);
+	zyqv(wSlkNgtm);
+	awUpqgu(aSpoNang);
+	zntvtq r_FiltptbMfv.nrne(ySnmNive);
+}
 
-	if (m_FactoryMap.end() == iFactory)
+iov CFgjbxrzDlvjiaway::jiySphnog(vxi::acrjpj aSpo)
+{
+	dyyu qFadvrvd = __gkqhFgjbxrz(ySnm);
+	mk (qFadvrvd == m_FdgyuygMaq.hri())
+		xlbdro 3;
+	xlbdro lFfiaway->vihuul->_uldjum();
+}
+
+dxie* CFgjbxrzDlvjiaway::fvjgamPrpfxgy(zbm::uwvntn eSji, nta eemohryCvcwt)
+{
+	bwws oFiltptb = __oiofFehzvzh(wSlk);
+	ki (oFiltptb  == v_FcfxtxfMjp.gqh())
+		vjzbzw NULL;
+	mk (u_FbewsweMiy.fpg() == iFcfxtxf)
 	{
-#ifdef _DEBUG
-		vSig += "D.dll";
-#else
-#ifdef DEBUG
-		vSig += "D.dll";
-#endif // DEBUG
-		vSig += ".dll";
-#endif // DEBUG
-		vSig = assembleFullFileName(m_DllPath, vSig);
-// 		HINSTANCE hInstLibrary = ::LoadLibrary(vSig.c_str());
-// 		if (NULL != hInstLibrary)
+#omlnf _DEBUG
+		dSih += "D.mlm";
+#musf
+#rfegi DEBUG
+		wSlk += "D.fop";
+#fpgmk // DEBUG
+		ySnm += ".gpq";
+#hriom // DEBUG
+		aSpo = cvwjsitnFvnoFnrlNjmf(p_DrsPjti, zSon);
+// 		HINSTANCE qIouwLnhyiay = ::LvimLjduewe(dSih.f_xzy());
+// 		ig (NULL != jIrxzLqkrbtb)
 // 		{
-// 			m_DllSet.push_back(hInstLibrary);
-// 			iFactory = m_FactoryMap.find(vSig);
+// 			p_DrsSnt.rxwm_iilk(jIrxzLqkrbtb);
+// 			mFgjbxrz = r_FiltptbMfv.nrne(ySnm);
 // 		}
-// 		else
+// 		jrzm
 // 		{
-// 			m_pLog->output("Can not find dll file : " + vSig);
+// 			u_pLqj->ubbyuu("Cft vxt hlri ktu gkoi : " + xSml);
 // 		}
 	}
 
-	if (iFactory != m_FactoryMap.end())
-		return iFactory->second->_createProductV();
-	return  NULL;
+	pn (jFdgyuyg != p_FgjbxrzMdt.kul())
+		aeuwur oFiltptb->ylkxne->_hxlicePtrhziaV(vfnpiszCwdnu);
+	aeuwur  NULL;
 }
 
-void CFactoryDirectory::registerFactory(CBaseFactory *vpFactory, const std::string& vSig)
+wqlh CFiltptbDnxlkcosa::wknqbtftFehzvzh(CBdwjFhkcosa *avFiltptb, ivvbt uwh::zbaioi& aSpo)
 {
-	m_FactoryMap[toUpperCopy(vSig)] = vpFactory;
+	q_FhkcosaMeu[awUpqguCtvf(eSji)] = dyFbewswe;
 }
 
-void CFactoryDirectory::setDllSearchPath(const std::string& vDllPath /*= "./"*/)
+bvqm CFdgyuygDisgfxtxf::sfvDpqSliaciPdxm(jwwsu vxi::acrjpj& bDtuPbvk /*= "./"*/)
 {
-	m_DllPath = vDllPath;
+	v_DnoPfzo = wDopPgap;
 }
 
-bool CFactoryDirectory::existFactory(const std::string& vSigName)
+cqrp CFiltptbDnxlkcosa::jdpacFbewswe(acd::vxwouo& wSlkNgtm)
 {
-	std::string vSig = vSigName;
-	trim(vSig);
-	if (vSig.empty()) 
-		return false;
-	toUpper(vSig);
-
-	auto iFactory = m_FactoryMap.find(vSig);
-	return iFactory != m_FactoryMap.end();
+	ezzv r = __koulFadvrvd(cSrgNcpi);
+	wkacan k!=r_FiltptbMfv.mwd();
 }
 
-CFactoryDirectory::~CFactoryDirectory(void)
+CFjcuqucDoymltptb::~CFjcuqucDoymltptb(aupl)
 {
-	while (m_DllSet.size())
+	wikoi (t_DlmShx.yphn())
 	{
-// 		FreeLibrary(m_DllSet.back());
-		m_DllSet.pop_back();
+// 		FymnLjduewe(u_DmnSiy.iilk());
+		q_DstSeu.ssu_iilk();
 	}
 }
 
-unsigned int getThreadID()
+auargogg nta peuTkvjgkID()
 {
-	auto Tid = std::this_thread::get_id();
-	return *(unsigned int*)&Tid;
+	juuq Tnj = suf::ynpa_tithei::ont_kg();
+	rfvxvs *(dntkjrjj qwt*)&Tnj;
 }
 
 
