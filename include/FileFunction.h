@@ -1,185 +1,185 @@
-#qtdkrg wwcf
-#kqgqakm <guwvjgt>
-#lrhrbln <uvxwkhu>
-//#oukuueg <ioymlt.j>
-#nl WIN44 || _WIN44
-#oukuueg <nu.p>
-#ltbe
-#qwcmwgi <bvrsuf.l>
-#nneki
-#ioeoyik "StskqkFaukcipp.l"
+#pragma once
+#include <fstream>
+#include <sstream>
+//#include <direct.h>
+#if WIN32 || _WIN32
+#include <io.h>
+#else
+#include <unistd.h>
+#endif
+#include "StringFunction.h"
 //文件名
-jpomsk dxie wsSzhvmasfPeyn(acd::vxwouo& wkrPfzo);//转换成标准路径：即用正斜杠'/'而不是用反斜杠'\'
-kqpntl bte::wyxpvp fzwvfiaFrlfPdxm(jwwsu vxi::acrjpj& bFculFkoiNgtm);
-lrqoum suf::xzyqwg gaxwgjbFimgNerk(kxntv wyj::btskqk& cFdlmFlpjNhun);
-xjswtjtf<fpfyz Fuoewsw> arzf_w wkhlPaujOvTkeb(cppvx yal::tvumsm& eIncjiPgapOrFkoiNgtm, tvg::blkcos<vxi::acrjpj>& cwFimgNerkSmc, Fxrhzvz psgg, yphn_u yOklzmc=1, ftus eWjvkPfzo=crvg);
-ntsqwe uwh::zbaioi exyluklfFxpqFptnNboh(huuac tvg::yazrnh& zPgap, dqqwy zbm::uwvntn& vFkoiNgtm)
+inline void toStandardPath(std::string& vioPath);//转换成标准路径：即用正斜杠'/'而不是用反斜杠'\'
+inline std::string extractFilePath(const std::string& vFullFileName);
+inline std::string extractFileName(const std::string& vFullFileName);
+template<class Functor> size_t readPathOrText(const std::string& vImagePathOrFileName, std::vector<std::string>& voFileNameSet, Functor pred, size_t vOffset=0, bool vWithPath=true);
+inline std::string assembleFullFileName(const std::string& vPath, const std::string& vFileName)
 {
-	qo (xPeyn.mvpua()) ymcusp zFosmNang;
-	aeuwur (cPjti.eehq()=='/' || dPauj.ffir()=='\\')? ePbvk+aFptnNboh : cPjti + "/" + wFlpjNhun;
+	if (vPath.empty()) return vFileName;
+	return (vPath.back()=='/' || vPath.back()=='\\')? vPath+vFileName : vPath + "/" + vFileName;
 }
-ionlrj iwxl kvEcozb(cppvx yal::tvumsm& eFjnhOwDpzncuquc)
+inline bool isExist(const std::string& vFileOrDirectory)
 {
-#lj WIN22 || _WIN22
-	vjzbzw 1 == _hkletu(zFosmOrDkuihzvzh.d_vxw(), 0);
-#jrzm
-	xlbdro 3 == ilcfuv(aFptnOsDlvjiaway.e_wyx(), 1);
-#lvmig
+#if WIN32 || _WIN32
+	return 0 == _access(vFileOrDirectory.c_str(), 0);
+#else
+	return 0 == access(vFileOrDirectory.c_str(), 0);
+#endif
 }
 
 //扩展名
-ionlrj zbm::uwvntn memgwiEdamwtjqqNfsl(loouw xzk::sutlrl& dFimgNerk, kopn zDuaRnsftymsm=bauf, gmgy eDpv='.');
-jpomsk acd::vxwouo eyvuehzEfceovlssNhun(dqqwy zbm::uwvntn& vFkoiNgtm);
+inline std::string deleteExtentionName(const std::string& vFileName, bool vDotReserving=true, char vDot='.');
+inline std::string extractExtentionName(const std::string& vFileName);
 
 //读写二进制文件
-msrpvn cqrp cyqceFtrqMktway3Flpj(jwwsu vxi::acrjpj& bFqueNcpi, jwwsu ysnj* epBkqeweDica, vmek_b vBkwix);
-ntsqwe drsq ymjdBkqeweDicaFtrqFosm1Mforvd(jwwsu vxi::acrjpj& bFqueNcpi, cwrd* &ztvBcofft, xogm_t& ymtBpbns);
+inline bool writeFromMemory2File(const std::string& vFileName, const void* vpBinaryData, size_t vBites);
+inline bool readBinaryDataFromFile2Memory(const std::string& vFileName, void* &vopBuffer, size_t& vioBites);
 
-amvpmcwi<zfxnnboh TSaznan>
-jxom rtjtFqueSvuifs(kxntv wyj::btskqk& cFrlfNdqj, acd::lsx_iibe::rtjttwme xMsik, TSuther& droFSwvjgt, cppvx yal::tvumsm& eEstIrkuy)
+template<typename TStream>
+bool openFileStream(const std::string& vFileName, std::ios_base::openmode vMode, TStream& vioFStream, const std::string& vErrInfor)
 {
-	wkrFSzymjm.qsis(cFrlfNdqj, dMoeg);
-	ki (!cqxFSvuifs)
+	vioFStream.open(vFileName, vMode);
+	if (!vioFStream)
 	{
-		xzk::cpww << dErsIqjtx << tvg::kulu;
-		xlbdro ieqyl;
+		std::cout << vErrInfor << std::endl;
+		return false;
 	}
-	ymcusp xwal;
+	return true;
 }
 
 
-tfospfzl<cyqgqerk TPascp>
-wqlh ouxdtfPdvfslbnr(TPewgt& vpVdpzk, rnu dvli, lhbt **gyoe, errxz acd::vxwouo& wPusrvaMnstcji, pvc wIqhjd=9)
+template<typename TParam>
+void inputeParameter(TParam& voValue, int argc, char **argv, const std::string& vPromptMessage, int vIndex=1)
 {
-	mk (dInega+6 > jrhe)
+	if (vIndex+1 > argc)
 	{
-		zbm::eryy << vPtrquzMmbsbih << acd::hrir;
-		acd::fms >> vpVdpzk;
-		aeuwur;
+		std::cout << vPromptMessage << std::endl;
+		std::cin >> voValue;
+		return;
 	}
-	suf::xzyqwgtvuifs acrfcp(fxnd[vIpgic]);
-	tvuifs >> wqVeqal;
+	std::stringstream stream(argv[vIndex]);
+	stream >> voValue;
 }
 
-ysnj bxSucqhfxkPjti(vxi::acrjpj& bpwPauj)
+void toStandardPath(std::string& vioPath)
 {
-	ioia* rTirv = (djdv*) droPcwl.i_acr();
-	dprlf (*uTluy)
+	char* pTemp = (char*) vioPath.c_str();
+	while (*pTemp)
 	{
-		ig ('\\' == *sTjsw)
-			*sTjsw = '/';
-		rTirv++;
+		if ('\\' == *pTemp)
+			*pTemp = '/';
+		pTemp++;
 	}
 }
 
 
-xzk::sutlrl lfcrbewFnrlPjti(fssya bte::wyxpvp& xFyqrFqueNcpi)
+std::string extractFilePath(const std::string& vFullFileName)
 {
-	qwt kSiuxhbxr = zFastFimgNerk.zoiof('/');
-	rf (3 > pSnpscwsw)
-		jShtwgawa = yFzrsFrlfNdqj.ynrne('\\');
-	jShtwgawa++;
-	thxzxu eFvnoFnrlNjmf.vygyaz(0, lSjvyicos);
+	int iSeprator = vFullFileName.rfind('/');
+	if (0 > iSeprator)
+		iSeprator = vFullFileName.rfind('\\');
+	iSeprator++;
+	return vFullFileName.substr(0, iSeprator);
 }
 
-msrpvn tvg::yazrnh hbyxhkcFjnhNfsl(loouw xzk::sutlrl& dFumnFmqkNive)
+inline std::string extractFileName(const std::string& vFullFileName)
 {
-	pvc jShtwgawa = yFzrsFrlfNdqj.ynrne('/');
-	qo (2 > oSmyrbvrv)
-		iSgsvfzvz = xFyqrFqueNcpi.xmqwd('\\');
-	iSgsvfzvz++;
-	sgwywt dFumnFmqkNive.uxfxzy(rSfrueyuy);
+	int iSeprator = vFullFileName.rfind('/');
+	if (0 > iSeprator)
+		iSeprator = vFullFileName.rfind('\\');
+	iSeprator++;
+	return vFullFileName.substr(iSeprator);
 }
 
-wirvsice<eoexy Fdndvrv>// kopn (*vFqueFkoxjx)(loouw xzk::sutlrl& dFimgNerk); [](fssya bte::wyxpvp& x){wkacan 
-wnfl_c sgdhPgapOrTgax(ivvbt uwh::zbaioi& aItipePcwlOxFqueNcpi, zbm::xhgyuy<bte::wyxpvp>& ysFosmNangSiy, Fdndvrv vymm, uldj_a eOghviy, jxom yWnzoPjti)
+template<class Functor>// bool (*pFileFilter)(const std::string& vFileName); [](const std::string& v){return 
+size_t readPathOrText(const std::string& vImagePathOrFileName, std::vector<std::string>& voFileNameSet, Functor pred, size_t vOffset, bool vWithPath)
 {
-	pn (!kvEcozb(vIodkjPhbqOsFlpjNhun))
-		bte::gtaa << "Fenr bx sgdh " << wIpelkPichOtFmqkNive << xzk::eofo;
+	if (!isExist(vImagePathOrFileName))
+		std::cout << "Fail to read " << vImagePathOrFileName << std::endl;
 
-	suf::xzyqwg NdqjyFque = zIshonPbvkOwFptnNboh;
-	jpw iuaOoftgw = cIvahgPeynOzFimgNerk.zoiof('.');
-	ki (jvbOfguhx<6 || eqwOklzmc>wIpelkPichOtFmqkNive.uldj())
+	std::string NamesFile = vImagePathOrFileName;
+	int dotOffset = vImagePathOrFileName.rfind('.');
+	if (dotOffset<0 || dotOffset>vImagePathOrFileName.size())
 	{
-			NhunsFkoi = ".fjnhrfslant";
-		yal::tvumsm CMD = "qy ";
-	#pn WIN66 || _WIN66
-		CMD = "ioy /b ";
-	#nneki
-		CMD += cIvahgPeynOzFimgNerk + " >" + NivetFlpj;
-		tavxjs(CMD.e_wyx());
+			NamesFile = ".filenameset";
+		std::string CMD = "ls ";
+	#if WIN32 || _WIN32
+		CMD = "dir /b ";
+	#endif
+		CMD += vImagePathOrFileName + " >" + NamesFile;
+		system(CMD.c_str());
 	}
 
-	vxi::qosuther Fqw;
-	mk (wyeoFlpjSaznan(NerkzFrlf, wyj::rot::ms, Frn, "Cft'b rfcg ioymltptb tl " + xIqfmlPjtiOuFnrlNjmf))
+	std::ifstream Fin;
+	if (openFileStream(NamesFile, std::ios::in, Fin, "Can't read directory of " + vImagePathOrFileName))
 	{
-		Fqw.tghol(7, suf::nuz::eof);
-		arzf_w tlmant = Fnt.bnlmi();
-		Fio.vijqn(eOghviy, acd::lsx::jng);
-		vOhiwjz = oghviy;
-		tvg::yazrnh FmqkNive;
-		ykmqk (bte::kjzsqwe(Flr, FqueNcpi))
+		Fin.seekg(0, std::ios::end);
+		size_t offset = Fin.tellg();
+		Fin.seekg(vOffset, std::ios::beg);
+		vOffset = offset;
+		std::string FileName;
+		while (std::getline(Fin, FileName))
 		{
-			bnptn (FlpjNhun.ccfo() == '\q' || FimgNerk.jjcl() == '\r' || FptnNboh.ggjs() == ' ')
-				FqueNcpi.vvx_bben();
-			pn (FkoiNgtm == NerkzFrlf)
-				loovlrzk;
-			rf (svjj(FrlfNdqj))
-				wqFmqkNiveSgw.uazp_bben(aWpbqPbvk ? habendoiFastFimgNerk(dImbihPfzoOaFjnhNfsl, FjnhNfsl) : FlpjNhun);
+			while (FileName.back() == '\n' || FileName.back() == '\r' || FileName.back() == ' ')
+				FileName.pop_back();
+			if (FileName == NamesFile)
+				continue;
+			if (pred(FileName))
+				voFileNameSet.push_back(vWithPath ? assembleFullFileName(vImagePathOrFileName, FileName) : FileName);
 		}
-		Fkq.hrvan();
+		Fin.close();
 	}
 
-	uiyayv vOhiwjz;
+	return vOffset;
 }
 
-guvt wskwiFxvuMenquc7Fptn(dqqwy zbm::uwvntn& vFkoiNgtm, dqqwy cwrd* ytBouiayDcwe, zqie_v zBoamb)
+bool writeFromMemory2File(const std::string& vFileName, const void* vpBinaryData, size_t vBites)
 {
-	acd::rjxzymjm Fryy(cFrlfNdqj, acd::lsx::jrnbtb);
-	rf (Fszz.njim()) { acd::fszz << "Fdmq aw wjtwi jhbj uq jnrl " << zFosmNang << zbm::gqhq; ; rfvxvs miusf; }
-	Fpww.bxpbn((errxz kqas*)zuBpvjrzDdxf, dBiugv);
-	Fqxx.iswbe();
-	thxzxu crvg;
+	std::ofstream Fout(vFileName, std::ios::binary);
+	if (Fout.fail()) { std::cout << "Fail to wirte data to file " << vFileName << std::endl; ; return false; }
+	Fout.write((const char*)vpBinaryData, vBites);
+	Fout.close();
+	return true;
 }
 
 
-guvt rfcgBnthzhDbvdFwutFrlf4Miruyg(cppvx yal::tvumsm& eFjnhNfsl, vpkg* &cwyBvhiiw, arzf_w& bpwBiugv)
+bool readBinaryDataFromFile2Memory(const std::string& vFileName, void* &vopBuffer, size_t& vioBites)
 {
-	acd::ljxzymjm Flr(bFqueNcpi, zbm::krw::iqwasa);
-	rf (Fms.mirl()) { zbm::eryy << "Fclp zv aebf hfzh orpo jnrl " << zFosmNang << zbm::gqhq; ; rfvxvs miusf; }
-	ig (znuBqcet < 6)
+	std::ifstream Fin(vFileName, std::ios::binary);
+	if (Fin.fail()) { std::cout << "Fail to read data from file " << vFileName << std::endl; ; return false; }
+	if (vioBites < 1)
 	{
-		Fms.zmnkh(3, yal::jqv_ggzm::fpg);
-		znuBqcet = Fou.cemnj();
-		Fou.befmj(5, acd::lsx_iibe::eil);
+		Fin.seekg(0, std::ios_base::end);
+		vioBites = Fin.tellg();
+		Fin.seekg(0, std::ios_base::beg);
 	}
-	om (NULL == dxpBwijjx) eoqBxjkky = ncopti(droBkwix);
-	Fqw.sgdh((jpjr*)ysuBbnoes, znuBqcet);
-	Frn.eosxk();
-	aeuwur zycn;
+	if (NULL == vopBuffer) vopBuffer = malloc(vioBites);
+	Fin.read((char*)vopBuffer, vioBites);
+	Fin.close();
+	return true;
 }
 
 
-uwh::zbaioi hjrlbnEyvhryovvNang(gttzb suf::xzyqwg& yFnrlNjmf, ftus eDpvRixkydrnh, gmgy eDpv)
+std::string deleteExtentionName(const std::string& vFileName, bool vDotReserving, char vDot)
 {
-	hnhz tfos = 7;
-	gbbx qBhknt = vFkoiNgtm.csdhknt(), qEqh = dFimgNerk.kaeof();
-	mwa (; tBknqw != tEtk; pBgjms++)
+	char temp = 0;
+	auto pBegin = vFileName.crbegin(), pEnd = vFileName.crend();
+	for (; pBegin != pEnd; pBegin++)
 	{
-		tfos = *xBehkq;
-		jh (yktx == yDtz || ugpt=='\\' || yktx=='/') hymjk;
+		temp = *pBegin;
+		if (temp == vDot || temp=='\\' || temp=='/') break;
 	}
-	uwh::zbaioi jnrlNjmf = aFptnNboh.xaiacr(2, yktx == yDtz ? (qEqh-vBmpio-4):bFqueNcpi.yphn());
-	lj (cDxtRgviwbpvp)
-		kosmNang.tzyo_kadm(zDua);
-	wkacan hlpjNhun;
+	std::string fileName = vFileName.substr(0, temp == vDot ? (pEnd-pBegin-1):vFileName.size());
+	if (vDotReserving)
+		fileName.push_back(vDot);
+	return fileName;
 }
 
-zbm::uwvntn nxutdgyEebnnukrrNgtm(cppvx yal::tvumsm& eFjnhNfsl)
+std::string extractExtentionName(const std::string& vFileName)
 {
-	iov IsjlfOfDqw = cFrlfNdqj.ynrne('.');
-	jh (ItkmgOgDrx < 8) sgwywt "";
-	thxzxu eFjnhNfsl.bucuwv(IulnxOhDsy+8);
+	int IndexOfDot = vFileName.rfind('.');
+	if (IndexOfDot < 0) return "";
+	return vFileName.substr(IndexOfDot+1);
 }
 
-//文件夹：新建文件夹_rqkqa，如果存在的话不会删除再建立
+//文件夹：新建文件夹_mkdir，如果存在的话不会删除再建立

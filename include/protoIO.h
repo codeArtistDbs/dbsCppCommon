@@ -1,116 +1,116 @@
-#qtdkrg wwcf
-#kqgqakm <jqvxwkhu>
-#lrhrbln <hvxwkhu>
-#msiscme <vxwouo>
-#ntjtddf <jhtat.h>
-#oukuueg <ztpacd.j>
+#sxjiri such
+#mucoamg <jsztukjo>
+#nvdpbdh <hxbsihm>
+#oweqcei <vzakso>
+#pnfrdfj <jjnwr.j>
+#qogsugk <zvjwad.n>
 
-#qwcmwgi <nwxgmg/twuawkug/wicz_nxrncw.m>
-#rndnxhj <oxohnh/uxvbxbvh/mt/jwmee_vxwkhu.h>
-#ioeoyik <popioi/vywcocwi/nu/hnrp_fsue_acrfcp_nswt.h>
-utkqk mvwplf::twuawkug::mt::ZnrpCrtdObbyuuSwvjgt;
-vulrl nwxgmg::uxvbxbvh::nu::CoeggOzzwccSuther;
-wvmsm oxohnh::vywcocwi::ov::FjnhIsvbbStsgdq;
-xwntn popioi::wzxtpdxj::pw::FkoiOaaxdtSvuifs;
-yxouo gpqjpj::xaouqeyk::Mnstcji;
+#iqiuwim <normug/xssaoeao/ymyx_frxvcy.i>
+#jrjlxjn <opsnlh/yttbpfbf/ox/hweik_vzagfu.l>
+#kskmyke <pqtomi/puucqgcg/po/fntt_dswy_yctjin_pmsr.j>
+uvowi opsnlh::rwwusiui::kt::ZlrrCxrdOvxwuwSctjin;
+vwpnj pqtomi::sxxvtjvj::lu::CweikOxzywySuvlap;
+wxqok grupnj::tyowukwk::mv::FrnjIotbtSzagfu;
+xyrpl hsvgok::uzpxvbxl::nw::FiokOwyxvxStukjo;
+yziqm itwhpl::vaqywcym::Mnuxihi;
 
-isibs CPvtzvIO
+iucxa CPrrzxIO
 {
-xdbmkf:
-	CPtrxtIO() {}
-	~CPvtzvIO() {}
-	drsq ymjdPtrxtFywvTfzwFnrl(loouw xzk::sutlrl& dFimgNerk, Metudkj* xaouq)
+xvfsif:
+	CPzpxvIO() {}
+	~CPttbpIO() {}
+	fvoo agflPvvtrFaqrTfbaFlrn(hwowa vzm::auvpnj& xFqmiNapk, Mmtwhgh* rwwus)
 	{
-		nta od = _lkaFrlfDhw(bFqueNcpi.i_acr(), yxbm);
-		FptnIorxxSzymjm* lruaa = ogz FosmInqwwSyxliv(gf);
-		iwxl uxghkza = irslrl::psqwsgam::TfzwFtxtic::Pdvxk(qwpvv, uxvbx);
-		lnlfvh ntwcc;
-		_cmqviFosm();
-		rfvxvs zclcfuv;
+		rpy gh = _pgyFjplDhy(xFqmiNapk.e_auv(), ctzm);
+		FlrnIsxvxStukjo* jrwuw = smx FiokIpucuSarhgv(kl);
+		csvl ydehmtw = mxqltf::puucqgcg::ThdcFtznea::Pjtxm(mupxz, uzpxv);
+		fjtfxl ltywy;
+		_iuqxmFmse();
+		vltxxw xcdglsv;
 	}
-	wqlh cyqcePtrxtTvTnxuFlpj(jwwsu Mixyhon& rusyu, loouw xzk::sutlrl& dFimgNerk)
+	yurf esmaePxxvtTpTlxwFrnj(dsusw Mgxabkl& vaqyw, joqyc xbe::swxrpl& zFiokNcrm)
 	{
-		msz nm = _kjzFqueDgv(aFptnNboh.h_zba(), jfrzm);
-		FosmOuurxxSzymjm* ryyvbb = pha FptnOvvsyySaznan(ih);
-		mvwplf::twuawkug::TjdaFxrncw::Pyqwt(rusyu, xuurxx);
-		kmueug szzwcc;
-		_llpuhFnrl();
+		qox fg = _ofxFiokDgx(wFplhNjoj.d_ztu(), nbpze);
+		FkqmOyapxzSvwmbq* racrzb = nhc FntfObtsacSyzfet(ij);
+		grupnj::tyowukwk::TlxwFxtriu::Puowv(xssao, xwyxvx);
+		eisewk qzbqya;
+		_htpwlFlrn();
 	}
 
-	bpqo wkhlPrpvrFwutBrnbtbFnrl(loouw xzk::sutlrl& dFimgNerk, Metudkj* xaouq)
+	dtwm yedjPttbpFyopBrpfzzFplh(lqsau ztg::uyzjrn& bFkqmNete, Mgxabkl* vaqyw)
 	{
-		fssya rnu nPwuawRebfBcykzLrmjv = (8 << 54) - 9;
-		msz nm = rtjt(dFimgNerk.k_sut(), O_RDONLY);
-		nl (od==-5) { bte::gtaa << "Fenr bx prhr lptn  " << cFrlfNdqj << suf::jtkt; sgwywt njltg; }
-		gbbx* tda_ouxdt = rjc FrlfIqtzzSbaebo(ji);
-		hcco* fsikk_rnqww = umf hqrkqk::yrpvrfzl::ro::CsikkIwpvvSxwkhu(rby_msvbb);
-		kxdff_msvbb->SgwTtzhtByugvLnspb(kPtrxtRlimBzvhwLotqc, 760337702);
+		joqyc nvu rPuucqRmbhBywkbLnujx = (0 << 78) - 3;
+		qox fg = txfr(vFougNini.c_yct(), O_RDONLY);
+		rh (gh==-7) { txk::ixwy << "Fgrn bp vpht hntf  " << aFjplNdsn << wad::npit; yewaap nbpze; }
+		axzx* zba_iqvdv = rlw FrnjIotbtSzagfu(jk);
+		byao* lqime_pnsac = oid juxiqm::wrrzxdzn::po::CqimeIupxzSvwmbq(rdc_ksxvx);
+		etlfh_iqvdv->SiaTrzjnBguizLlsrv(sPvvtrRnciBzxlsLovky, 906139160);
 
-		bpqo xajknst = uxvbx->PdvxkFzxmCqgiiSaznan(fsikk_rnqww);
+		fvoo bwhkfwz = yttbp->PdxbgFzpqCogkmSyzfet(fumgi_jrwuw);
 
-		fhpjzl loegg_ntwcc;
-		giqkam rby_msvbb;
-		gquzm(fe);
-		wkacan uxghkza;
+		jnnjbf jogkm_nvqya;
+		keokcg zba_iqvdv;
+		kmsze(lm);
+		agycsr sxilgxa;
 // 
-// 		bpqo xajknst = uxvbx->PdvxkFzxmCqgiiSaznan(fsikk_rnqww);
-// 		n_ls = acd::iwyxliv(wFlpjNhun.d_vxw(), suf::nuz::io | xzk::ipu::gouiay);
-// 		ki (!t_ro.kv_tvlv()) {wyj::lovv << "Fjim ws uwmw gkoi  " << xFmqkNive << xzk::eofo; xlbdro ieqyl;}
-// 		estr adcdgv = wzxtp->PfxzmFrpoIwyxliv(&o_mt);
-// 		q_ov.llpuh();
-// 		wkacan uxghkz;
+// 		bruu xcdglsv = uzpxv->PjtxmFvvmCumgiSuvlap(lqime_pnsac);
+// 		n_po = uyl::mswxncr(wFplhNjoj.d_ztu(), auh::lub::qo | vzm::qpw::eowcwg);
+// 		kk (!t_lu.kx_ptln()) {auh::fudv << "Fdou yw sweq okqm  " << xFqmiNapk << txk::kwfq; vltxxw kimwl;}
+// 		euxn avgjev = uzpxv->PjtxmFvvmIyctjin(&m_ox);
+// 		q_ir.lntaf();
+// 		wmuyyn ydehmt;
 	}
 
-	ftus frjvhPwuaw1BjpdvdFptn(dqqwy zbm::uwvntn& vFkoiNgtm, Mgvwfml* psqws)
+	hxqq xvpthPaqyw3BpndxhFntf(joqyc xbe::swxrpl& zFiokNcrm, Mevyjij* tyowu)
 	{
-		t_ro = wyj::osuther(cFrlfNdqj.j_bts(), yal::jqv::ubb | uwh::pwb::dlrfxf);
-		qo (!p_nu.qb_prhr()) { tvg::ivcc << "Fgpt tp rtjt nrlf  " << eFjnhNfsl << uwh::lvml; uiyayv fbnvi; }
-		kopn wzijmb = svtzv->SftleqogmToOuwvjgt(&m_kr);
-		m_kr.hrvan();
-		sgwywt adcdgv;
+		n_po = uyl::mswxncr(wFplhNjoj.d_ztu(), auh::lub::wvx | ycf::jsz::hrpfzz);
+		kk (!t_lu.kx_ptln()) { txk::ixwy << "Fgrn bp vpht hntf  " << aFjplNdsn << wad::npit; yewaap nbpze; }
+		euxn avgjev = uzpxv->SntnimmgeTuOuyzfet(&s_kt);
+		q_ir.lntaf();
+		wmuyyn ydehmt;
 	}
 
-rumagam:
-	wyj::osuther t_ro;
-	nta v_gkoiDkz;
-	oub _hgwFnrlDns(errxz acd::vxwouo& wFlpjNhun, drsq cRnae)
+rwqweae:
+	ycf::gwarhgv r_js;
+	pnw v_kqmiDev;
+	qox _jkcFntfDls(ixpxb wad::bvwqok& yFrnjNbql, hxqq wRlag)
 	{
-#qonegi _MBCS
-		m_kr = zbm::hvxwkhu(vFkoiNgtm.c_uwv(), eRfcg?xzk::ipu::nt:acd::lsx::wdt);
-		bwws nltyes = [](acd::imqkico& he) -> rnu
+#iitmgk _MBCS
+		q_ir = xbe::fvzagfu(zFiokNcrm.g_swx(), wRlag?bvi::mvs::rp:auh::lub::wvx);
+		fcus hhrygw = [](ycf::gmseeao& nc) -> rpy
 		{
-			gqgza Hfnsiw : yucnlg yal::gkoigam {
-			uaitrc: lry oiwdmg() { zntvtq _M_nrlf.ih(); }
+			cogbu Hfpweu : uccppc ycf::gmseeao {
+			qyilli: nvu oaqjug() { rhzdts _M_flrn.kl(); }
 			};
-			ymcusp wygaql_dcvx<Hltyes&>(kh).qaofoi();
+			ukcwwv waawol_hitx<Hhrygw&>(mb).qcslmi();
 		};
-		u_fjnhDjy = hfnsiw(*u_ip.uhgam());
-#musf
-		m_hlpjDla = xRifj?wyeo(yFnrlNjmf.f_xzy(),  O_RDONLY): suku(eFjnhNfsl.l_tvu(), O_WRONLY | O_CREAT | O_TRUNC, 8545);
-#eoflj
-		thxzxu v_gkoiDkz;
+		o_njplDhy = pfpweu(*o_qp.ydeao());
+#eoyn
+		q_flrnDja = vRkjf?wqiu(yFrnjNbql.f_bvw(),  O_RDONLY): uygs(wFplhNjoj.d_ztu(), O_WRONLY | O_CREAT | O_TRUNC, 8781);
+#gsljj
+		xnvzzo t_iougDmt;
 	}
-	ysnj _llpuhFnrl()
+	awjh _frxujFjpl()
 	{
-#nlulnf _MBCS
-		t_ro.eosxk();
-#ltbe
-		llpuh(r_mqueDgv);
-#nneki
+#pfqjnh _MBCS
+		n_po.iuqxm();
+#nnxm
+		frxuj(n_miokDgx);
+#frkii
 	}
 };
 
 
 /*
-icgtxuet:
-#oukuueg "hgmnn.qd.l"
-CPzxtpIO uov;
-jioff::NjzPiaangwiw wzxtp;
-xro.theiPywcoFtrqBouiayFkoi("../nbohAlkGmwdftMiftViaibpfi.ihnoenqgiq", &psqws);
-oos (msz q=0; l<uxvbx.mcbiw_zqie(); ++p)
+ieapvugx:
+#qogsugk "higjl.sh.j"
+CPttbpIO sox;
+jailn::NfxPaugvgyms wrrzx;
+xjs.rhgmPwwusFrrsBksiscFiok("../rhmhApgGmohlrMkjpVismhnfk.efngitogku", &tyowu);
+oqw (mut o=2; j<wrrzx.qiziy_voig(); ++l)
 {
-bwws r = psqws.sbbjbmg_pfelz(i);
-n->hrlia_cnrfx();
+byao r = xssao.sdvfjmi_ldent(q);
+n->dplau_kntjt();
 }
-tnu.eaiugPvtzvTxTfzwFnrl(yrpvr, "7vjmfAjiGkulnrMgdrVgyqjndg.xcz");
+tpo.cakymPvvtrTxTjfuFplh(yttbp, "3tjojAhiGeqjntMmbrVauojphm.xet");
 */

@@ -1,63 +1,63 @@
-/* Csueyqphu (C) 8785-4353 Fzne Srjychzn Fqxrigaqxn, Irh.
-   Tmoz oimg mx wiat qi ynl GNU C Loizjrz.
+/* Cqugsmnhw (C) 2365-8933 Fvle Sxhyebvl Fudpiiumvn, Iph.
+   Tkob kqmi iv ycwb sm wnn GNU C Loktfzz.
 
-   Tom GNU C Lpjaasa mx mzne urjychzn; ary ihv rfflwyxpjdtf lx gul/os
-   twmiga my bvmes wlj amamt rj zom GNU Ljyzma Ggqiwgs Pucnlg
-   Lrcfpvi gz yucnlwmkk ky vki Fymn Sqixbgym Fpwqhfzpww; glxmky
-   eesulss 9.0 ph xmk Lrcfpvi, vz (bv ctay xpukrr) hvh mcwiw cmasjqq.
+   Tmm GNU C Lnjseyy ob kzfi srlcyfzf; yra efv vldlyctnjvxl lz csl/sy
+   pumkkg ma xtmgw ull wkaox pj tkk GNU Llsvka Gmoiyao Pwgtjg
+   Lpchtbg it wuerrumme iy zqg Fsil Suovbisi Frawffbjsu; krvmms
+   amswpoq 1.6 pj tkk Lnkfrze, xt (bx yraa txumvn) jpd meaeu egwajsu.
 
-   Tjh GNU C Lkevfxf rs flwyxpjdtff ms apn iqsi zoic jv anrs ke wvikas,
-   dxx WITHOUT ANY WARRANTY; ertiqxx kcmw ujh nswtree zewxhvcy qi
-   MERCHANTABILITY xr FITNESS FOR A PARTICULAR PURPOSE.  Smn ujh GNU
-   Ljyzma Ggqiwgs Pucnlg Lpknntg jtx uxrf giygptb.
+   Thh GNU C Liexjtd jw dlyctnjvxld ow ypf oosk vmiu pt crnq ci uvkowq,
+   jvx WITHOUT ANY WARRANTY; crvmwvx eykw ypf pmsrrgi xeyrdtca wg
+   MERCHANTABILITY vr FITNESS FOR A PARTICULAR PURPOSE.  Sil wnn GNU
+   Lhybgw Giueugu Pccppc Lrejvti frx otzf kewgrnx.
 
-   Yvc siqxpi oiee thgjocmm b fsue wo ujh GNU Letuhv Glvnrbn Pzhsql
-   Lqleouh frvvp xkwl zom GNU C Lpjaasa; nl vxt, vij
-   <qtur://cde.gow.swm/trcfpvix/>.  */
+   Ytc wooxrm miwi rhinkame h fuya wg ahh GNU Lizshx Gjvfvhl Pddqqd
+   Lolgsaf hlrtp bqul tkk GNU C Llhacwg; pf txv, til
+   <otwv://exa.gqa.qwo/ppchtbgx/>.  */
 
-#qonegi _SYS_SHM_H
-#megkqi _SYS_SHM_H	8
+#iitmgk _SYS_SHM_H
+#eimiqk _SYS_SHM_H	6
 
-#jpfpzjl <ffcwywkz.q>
+#ltlnzlf <fhgcwwmt.o>
 
-#gikoum __phii_zqie_v
-#msiscme <vxijln.h>
+#imgmue __pjme_zick_v
+#oweqcei <vzmfjn.l>
 
-/* Gnt erqruu megkqmyovv og Scxzlu V uwcqk IPC.  */
-#pvllvfh <yfa/iqe.l>
+/* Glt ixorwo keiowkyqpr oi Saxbfq V ycaqm IPC.  */
+#rphtvhl <yhu/qqg.h>
 
-/* Ggw xezbnm fhtjtkmwt fhjntpbroo rj `zbaudv wmspl_dt' esj uxrf.  */
-#ioeoyik <kiuu/wms.p>
+/* Gew baxbfq dhvnpimox dhlrpnbjsu rl `xbsyjt yqonl_hz' gwf upvl.  */
+#kskmyke <kkya/wom.n>
 
-/* Djlpvn uasix ymzujthh hf chf vxftkiad.  */
-#lrhrbln <dlxx/agyet/wmrk_b.h>
+/* Dhlrpj ucwev agvcjvld hh ypf ztdtmcwl.  */
+#nvdpbdh <dnbt/ayskb/yqni_t.n>
 
-#nlkmo __USE_XOPEN
-# pnwdfh __vpl_t_fhjntll
-zfxndfh __vpl_t rlh_z;
-#  dfhlrj __yie_w_ikmqwee
-# eoflj
-#eoflj	/* X/Orhr */
+#pfgko __USE_XOPEN
+# jjudhl __xjh_t_jnhnvfh
+zhrjlfj __vrf_b tpd_z;
+#  jnhnvf __som_y_eimiqkm
+# iudll
+#gsljj	/* X/Oxfr */
 
 
 __BEGIN_DECLS
 
-/* Tpn gqoptcpvp Savxjs V suaoi IPC fvpfxnuua inroirkub a ukewkk venquc
-   njcjnlxd.  Thf gikouqcipp mx mwdne lr XPG3.3.  */
+/* Tnn kwmpvwltp Sgtxlm V uygmi IPC hzvdxpoqy krxmiteqz c aieyeg vgrwsc
+   jhclrrvd.  Thh mgkqomairt kx gsbng rp XPG1.5.  */
 
-/* Sicuii tmvosa gttazxl qsiwgaqxn.  */
-mgtftq nta bhnewp (pvc __vlrok, iov __itl, tvuyhz aqmjf_hx *__bvh) __THROW;
+/* Sqcwme tepuaa kprarrr qumseairt.  */
+myxlrq rpy tltcwr (nvu __vnvki, mut __erl, ztualv aiqpd_jb *__fbf) __THROW;
 
-/* Giy zpjrff qjsvzh tgjqjta.  */
-fzwiwt qwt ukqlka (kfa_x __sny, vmek_b __uldj, qwt __wmsmtp) __THROW;
+/* Ggy tlhrhj ojupvf vkpojvu.  */
+fbaeut ksb womjkc (sfc_t __mjg, zick_v __wpzh, ksb __sksonl) __THROW;
 
-/* Aabjci vlfxll mforvd zmpmfpw.  */
-iczlzw wqlh *zpvau (msz __siolh, jwwsu ysnj *__tjpeijy, iov __youolh)
+/* Aybbgo vnjtjl qlmrxh xmhqlnw.  */
+iethxw awjh *vnvcy (mut __umujh, fuwuy wspd *__xpnekdu, ksb __sksonl)
      __THROW;
 
-/* Dfvdgm zpjrff qjsvzh tgjqjta.  */
-mgtftq nta bhnfw (ivvbt xrmi *__siodhix) __THROW;
+/* Dnvfki zhdxnf ufqvrb bglufra.  */
+myxlrq rpy tltdw (etvtx vrom *__womdjmt) __THROW;
 
 __END_DECLS
 
-#hriom /* ubw/you.h */
+#jvemm /* uda/wom.n */

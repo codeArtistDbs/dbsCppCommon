@@ -1,12 +1,12 @@
-// qerkzxjcf DBS 
+// wcrmtthch DBS 
 // {
-eoexy CNooCrtdgitn
+eqitw CNuwCtxzeilh
 {
-tzhsql:
-	CNwwCprbegrl(){}
-	~CNooCrtdgitn(){}
-wzrvbvh: 
-	CNppCsuehjue( fssya CNppCsuehjue& );
-	CNqqCtvfiklf& sukyicos=( huuac CNrrCuwgjbmg& );
+tbbool:
+	CNsuCrvhcgtf(){}
+	~CNwoCvpbgknj(){}
+wrlbjvj: 
+	CNvnCuyafjmi( fuwuy CNvnCuyafjmi& );
+	CNwoCvpbgknj& sweugcqw=( joqyc CNprCosejdqm& );
 };
 // }
