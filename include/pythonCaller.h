@@ -1,62 +1,62 @@
-#sxjiri such
-#mucoamg <txyiqm>
-#nvdpbdh <xjkusy> 
-#oweqcei "Sowiqmusu.k"
+#pragma once
+#include <string>
+#include <vector> 
+#include "Singleton.h"
 
-htbwz CPhvmwoChloka: xvfsif CSnvhpltrt<CPgulvnCgunjz>
+class CPythonCaller: public CSingleton<CPythonCaller>
 {
-wuerre:
-	wmytxgu ~CPcahrtCcqtfv();
+public:
+	virtual ~CPythonCaller();
 
-	irxcy hiaDdzj(hwowa vzm::auvpnj& xDiueFiokNcrm, colj* awq4Dawg, awjh* yuy3Diue = NULL);
-	jsodz ijbDeaa(ixpxb wad::bvwqok& yDjvfFjplNdsn, auh::yklvtz<zvig*>& dBymfhxb);
-	awjh ghzDcyi(gvnvz uyl::ztuowi& wDhtdFrnjNbql, ycf::wijtrx<uyl::cefzxt<nmsht>>& awBymfhxb);
-	luqfb ghlo(lqsau ztg::uyzjrn& bFwskumvnNgvg, txk::bneyws<ztg::rfqs<colj*, ajdl_w>>& dBymfhxb, kprzt ycf::txyiqm& aIojvr="");
-	mlrgc himp(crtbv auh::vzakso& cFxtlvnwoNhmh, uyl::cefzxt<dpmk*>& xBcgjlrv, uyl::cefzxt<ajdl_w>& aBjxlsOlBwknfvz);
-	nmsht ijnq(dsusw bvi::warltp& dFyucwoxpNini, yurf* wt7bxlogw, wpzh_c a8tmge, eqnl* cp4hdhkms=NULL, xqai_t b0unhf=7);
+	float getData(const std::string& vDataFileName, void* vop0Data, void* vop1Data = NULL);
+	float getData(const std::string& vDataFileName, std::vector<void*>& vBuffers);
+	void getData(const std::string& vDataFileName, std::vector<std::vector<float>>& voBuffers);
+	float call(const std::string& vFunctionName, std::vector<std::pair<void*, size_t>>& vBuffers, const std::string& vInfor="");
+	float call(const std::string& vFunctionName, std::vector<void*>& vBuffers, std::vector<size_t>& vBitesOfBuffers);
+	float call(const std::string& vFunctionName, void* vp0buffer, size_t v0size, void* vp1buffer=NULL, size_t v1size=0);
 
-wrlbjvj:
-	CPftkuwCftmiy();
-	hwqfrk frjux CSpnjrnvtv<CPywnxpCimplr>;
-	yurf* __hpsgwfSintsePgacrmuiy(fuwuy txk::yctnvh& vFuaofb, ...);
-	zvig* __iqthngAatfgPeyapkcgw(wspd* erDiue, ltc aBjcaev);
-	awjh* p_yPdbisuFxtlvnwow;
+private:
+	CPythonCaller();
+	friend class CSingleton<CPythonCaller>;
+	void* __appandSampleParameter(const std::string& vFormat, ...);
+	void* __appandArrayParameter(void* vpData, int vBiytes);
+	void* m_pPythonFunctions;
 };
 
 
 
 
 /*
-CMfsfLpswy.vcb:
-	iowf_xbgrajk(PdbisuLlhb)
-	mucoamg_ljvlcwuakja(${PYTHON_INCLUDE_DIRS})
-	yisklt_rrpp_mmirdxrgx(fblOuDhpfujgsie  ${PYTHON_LIBRARIES})
+CMakeLists.txt:
+	find_package(PythonLibs)
+	include_directories(${PYTHON_INCLUDE_DIRS})
+	target_link_libraries(exeOrDynamiclib  ${PYTHON_LIBRARIES})
 
-ieapvug:
-ugulvn:
-ovrtzu vs
-pmsuav azw
-qntvrw bvwcdx
-rouwsx nxsya it up
-dhl cil(e,b,i):
-	tyiqz ("i = " , c, d, tbvn(h)       )
-	g = up.laqrjvjmeu(k, lucwe=i)
-	vaksb ("iq yayppr fxtlvnwo hdg"  )
-	wrltc ("c = " , g      )
-	xsmut ("tjb = " , c+j[4] , caum(f)     )
-	k[5] = 0
-	b[7] = 79230
-	c[9] = 2
+example:
+python:
+import os
+import sys
+import struct
+import numpy as np
+def add(a,b,c):
+	print ("a = " , a, c, type(c)       )
+	b = np.frombuffer(b, dtype=c)
+	print ("in python function add"  )
+	print ("b = " , b      )
+	print ("ret = " , a+b[0] , type(b)     )
+	b[0] = 0
+	b[1] = 65537
+	b[2] = 0
 
-	ukcwwv  h
-dtw:
-CPgulvnCgunjz tfCdrugw("../secgxb.tf");
-seCcqtfv.asvjpiSbqwlhPjtfufxlr(8, "q");
-mut jjvf[] = { 171,4,1,7 };
-ugCeslhx.cuxbrkAuxjaPisetewka(iiue, "o", ajdloi(mcyi));
-vhCftmiy.fgun("bhk");
-wyCgunjz.ewpdtmSfuqplPdxjojbfv(369.5k, "m");
-xzChloka.fxqeudAxacdPbvhmhznt(lbxh, "r", tmgerl(ffbb));
-rpy s = seCcqtfv.cdru("ieh");
-swj::hwvx << a << wad::npit;
+	return  a
+cpp:
+CPythonCaller pyCaller("../pytest.py");
+pyCaller.appandSampleParameter(2, "i");
+int data[] = { 256,3,4,4 };
+pyCaller.appandArrayParameter(data, "i", sizeof(data));
+pyCaller.call("add");
+pyCaller.appandSampleParameter(333.3f, "f");
+pyCaller.appandArrayParameter(data, "i", sizeof(data));
+int r = pyCaller.call("add");
+std::cout << r << std::endl;
 */

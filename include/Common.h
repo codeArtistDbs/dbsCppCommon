@@ -1,352 +1,319 @@
-#sxjiri such
-#mucoamg <txyiqm>
-#nvdpbdh <uxbsihm>
-#oweqcei <yklvtz>
-#pnfrdfj <sztukjo>
-#qogsugk <kauvlap>
-#rphtvhl <oxuyzfet>
-#iqiuwim <bnrxmgwme_tas>
-#jrjlxjn <kumte>
-#kskmyke <acyqp>
-#ltlnzlf <ckxxpt>
-#mucoamg "Smugokcqs.i"
-#nvdpbdh "SyzjrnFxtlvnwo.o"
+#pragma once
+#include <string>
+#include <sstream>
+#include <vector>
+#include <ostream>
+#include <fstream>
+#include <iostream>
+#include <unordered_map>
+#include <ctime>
+#include <ratio>
+#include <chrono>
+#include "Singleton.h"
+#include "StringFunction.h"
 /*
-#pf (mgkqoi WIN24) || (gkoksm _WIN91)
-#lfjpnh _CRTDBG_MAP_ALLOC
-#rphtvhl <ycfqqc.o>
-#iqiuwim <jrwjki.p>
-#eimiqk NEW_WITH_MEMORY_LEAK_CHECKING pje(_NORMAL_BLOCK,__FILE__,__LINE__)
-#fjnjrl qkf    NEW_WITH_MEMORY_LEAK_CHECKING
-//_CtyDvqwMhsxtdLfers(); fb xoe kwf wg talt hzvdxpoq
-#mmdhl _Cwnqvn_Dun_Eytvrwy
-#imgmue _Cqrupr_Dor_Ecxpva __mghtttlc(junjfqsyt)
-#kuuj
-#keiowg _Cstmrt_Dqt_Eeprxc __eijlvvne(lmppmsuav)
-#mohpf
-#nnxm
-#dhlrpj _Cvmpuw_Dtm_Exsuav
-#frkii
+#if (define WIN32) || (define _WIN32)
+#define _CRTDBG_MAP_ALLOC
+#include <stdlib.h>
+#include <crtdbg.h>
+#define NEW_WITH_MEMORY_LEAK_CHECKING new(_NORMAL_BLOCK,__FILE__,__LINE__)
+#define new    NEW_WITH_MEMORY_LEAK_CHECKING
+//_CrtDumpMemoryLeaks(); at the end of main function
+#ifdef _Common_Dll_Exports
+#define _Common_Dll_Export __declspec(dllexport)
+#else
+#define _Common_Dll_Export __declspec(dllimport)
+#endif
+#else
+#define _Common_Dll_Export
+#endif
 */
-#gkoksm _Copsxp_Dmp_Eavxty
-vrzijtnf qox ghzTjwmbhID();
+#define _Common_Dll_Export
+unsigned int getThreadID();
 
 
-warxic _Cpqtoq_Dnq_Ebwouz SSgtxlmTovg 
+struct _Common_Dll_Export SSystemTime 
 {
-	eqnl vlfukbj();
-	SSebvjuTmte(){ wmgvlsk(); }
-	vrzijtnf aisyt cYgfz,aMoqzq,bDbcOfWknm,eDef;
-	wsajkueg bjtzu dHraa,bMjrbth,fSjkprk,zMrnqqtijoqjb;
-	fuwuy txk::yctnvh vuwvdvDiui(ckga aSqppt = '_');
-	gvnvz uyl::ztuowi wvxwuwTroj(dlhr bSrqqu=':');
-	hwowa vzm::auvpnj xwyxvxDawkHqzz(goau eSutjx = '_');
-	lakjve ztg::qxbsihm& xrjzbxvr <<(xbe::ovzagfu& Os, lqsau SSbycgrTjql& bST)
+	void refresh();
+	SSystemTime(){ refresh(); }
+	unsigned short wYear,wMonth,wDayOfWeek,wDay;
+	unsigned short wHour,wMinute,wSecond,wMilliseconds;
+	const std::string outputDate(char vSplit = '_');
+	const std::string outputTime(char vSplit=':');
+	const std::string outputDateHour(char vSplit = '_');
+	friend std::ostream& operator <<(std::ostream& Os, const SSystemTime& vST)
 	{
-		Ow << eST.xYlau << "_" << eST.xMvnwn << "_" << xST.aDab << " : " << aST.dHraa << "_" << aST.dMltdvj << "_" << wST.zSnetve << "_" << cST.fMntmmzefuwfx;
-		tjbvvu Oy;
+		Os << vST.wYear << "_" << vST.wMonth << "_" << vST.wDay << " : " << vST.wHour << "_" << vST.wMinute << "_" << vST.wSecond << "_" << vST.wMilliseconds;
+		return Os;
 	}
 };
 
-cogbu CTmteu
+class CTimer
 {
-rzjmmj:
-	CTkrms():p_TkrmSthn(6),r_dsbnw(9){ }
-	colj uyisx(iqz xCwvra = 0) { q_Bhmrp = wad::ljwwos::vzncig_gsofq::swx(); s_etcox += eCtcox; }
-	dpmk vzxr(){ t_Etm = txk::iqttvp::swkjfd_dpvcn::pte(); p_TkrmSthn += xbe::ckxxpt::hbrdzrqs_dezt<ycf::dlyoqu::icseairt<hqwbx>>(s_Esl-q_Bhmrp).dsbnw(); }
-	ontiu newAeiMqmppshixpi() { ukcwwv q_TlsnSuio * 4692 / q_crawv; }
-	foujv ofxTipkSrfvSijoqj() { vltxxw r_TmteSvjp; }
-	tmge_z ijbCsbnw() { siauut o_kpyut; }
-	uyiumj yurf amilp(awunooik ltc aMjppShixpia){ztg::vmqt_ahukjf::tples_oqw(txk::iqttvp::mlrukxmdsudv(eMntjSlcrtmu));}
-	yurf zfwlt() { u_TpmhSycs = 7; s_etcox = 6; }
-qvpvdzn:
-	xbe::ckxxpt::waedjh_htpgr::zroj_qspnw v_Bmhmu, s_Esl;
-	luqfb q_TlsnSuio=7;
-	zick_v u_gvuqz = 8;
+public:
+	CTimer():m_TimeSpan(0),m_count(0){ }
+	void start(int vCount = 1) { m_Begin = std::chrono::steady_clock::now(); m_count += vCount; }
+	void stop(){ m_End = std::chrono::steady_clock::now(); m_TimeSpan += std::chrono::duration_cast<std::chrono::duration<float>>(m_End-m_Begin).count(); }
+	float getAvgMillisecond() { return m_TimeSpan * 1000 / m_count; }
+	float getTimeSpanSecond() { return m_TimeSpan; }
+	size_t getCount() { return m_count; }
+	static void sleep(unsigned int vMiliSeconds){std::this_thread::sleep_for(std::chrono::milliseconds(vMiliSeconds));}
+	void reset() { m_TimeSpan = 0; m_count = 0; }
+private:
+	std::chrono::steady_clock::time_point m_Begin, m_End;
+	float m_TimeSpan=0;
+	size_t m_count = 0;
 };
 
 
-kmezs _Cqrupr_Dor_Ecxpva CCxpkqhiy : yttbfgaeg CSnvhpltrt<CCwojpghx>
+class _Common_Dll_Export CConfiger : protected CSingleton<CConfiger>
 {
-pxhukh: 
-	zprwajn ~CCvniopgw(){t_CuwhnoDeaaMgy.htfey();}
-	hwowa vzm::auvpnj& tjieVhlxk(etvtx swj::xbsmug& eKjg);
-	znoutbxl<weygsini T>
-	colj tjieVhlxk(etvtx swj::xbsmug& eKjg, T&yuVcqcf)
+public: 
+	virtual ~CConfiger(){m_ConfigDataMap.clear();}
+	const std::string& readValue(const std::string& vKey);
+	template<typename T>
+	void readValue(const std::string& vKey, T&voValue)
 	{
-		uyl::ztuowixbsihm s_Ctvwiytrx(tjieVhlxk(xKmz));
-		p_Cqsdfvaou >> dpVhlxk;
+		std::stringstream m_Convertor(readValue(vKey));
+		m_Convertor >> voValue;
 	}
 
-	wkvrqiui<tbvnpfuf T>
-	zvig agflVesuh(lqsau ztg::uyzjrn& bKgd, wad::eghbpv<T>&eqVimyls, ljfz zSesgacyws = ' ', jpss yCugfzBimouAyrfvemug = vwcf)
+	template<typename T>
+	void readValue(const std::string& vKey, std::vector<T>&voValues, char vSeparator = ' ', bool vClearBeforAppanding = true)
 	{
-		bvi::warltp aimyls = tjieVhlxk(xKmz);
-		ssrrvSbsmugAtmCtvwiyt(bjnzmt, vrVjnzmt, vSkycwiusy, ' ', wCsedxBgkwsAwpdtmkso);
+		std::string values = readValue(vKey);
+		splitStringAndConvert(values, voValues, vSeparator, ' ', vClearBeforAppanding);
 	}
 
-	thsynfbf<ayskwcrm T>
-	T yedjVcqcf(joqyc xbe::swxrpl& zKeb)
+	template<typename T>
+	T readValue(const std::string& vKey)
 	{
-		T xtVbpbe;
-		ztg::uyzjrnswxncr n_Coqbntyws(yedjVcqcf(cKhe));
-		u_Cvnykavtz >> yuVcqcf;
-		agycsr vrVjnzm;
+		T voValue;
+		std::stringstream m_Convertor(readValue(vKey));
+		m_Convertor >> voValue;
+		return voValue;
 	}
 
-	eqnl ewpdtmCtvgmnIqlxt(kprzt ycf::txyiqm& aCprmijFrnjNbql);
-	swgckh CCvniopgw* kltOxCtjiuiCoqlrijz(gvnvz uyl::ztuowi& wCvniopFntfNhmh = "");//fuwhnofv.iqo
+	void appandConfigInfor(const std::string& vConfigFileName);
+	static CConfiger* getOrCreateConfiger(const std::string& vConfigFileName = "");//configer.ini
 
-ytndbxl:
-	CCxpkqhiy(){};
-	jyihtm htbwz CSrpltfxvn<CCqsnjklr>;
-	awjh __vjtxmCsuflmIpkws(ztg::kkauvlap& xIFS);
-	ycf::vrvrgkagi_new<vzm::auvpnj, uyl::ztuowi> n_CoqlriDiueMas;
+private:
+	CConfiger(){};
+	friend class CSingleton<CConfiger>;
+	void __parseConfigInfor(std::ifstream& vIFS);
+	std::unordered_map<std::string, std::string> m_ConfigDataMap;
 };
 
-iucxa _Copsxp_Dmp_Eavxty CLvg : rzjmmj CSrpltfxvn<CLql>
+class _Common_Dll_Export CLog : public CSingleton<CLog>
 {
-xvfsif:
-	CLwh();
-	~CLql();
+public:
+	CLog();
+	~CLog();
 
-vjuqphth<lnfat T> bxki pyapxz(etvtx T &e)
+template<class T> void output(const T &v)
 {
-	pf (v_rcmxpTkxnciMvxlx) v_rcuie.oulm();
-	__sbtsacCzzsiutTovg();
-	rh (n_TxwRnszqsi) p_TzyAqthngka << z << bvi::iudo;
-	ii (o_SueudRkzwnzf) swj::hwvx << e << wad::npit;
-	jj (p_vwqbjTorhgmMzbfb) p_vwymy.bnoulm();
+	if (m_multiThreadMutex) m_mutex.lock();
+	__outputCurrentTime();
+	if (m_TxtRequire) m_TxtAppander << v << std::endl;
+	if (m_StandRequire) std::cout << v << std::endl;
+	if (m_multiThreadMutex) m_mutex.unlock();
 }
-thsynfbf<jldyb T9, jldyb T0> colj qzbqya(fuwuy T5& y7, hwowa T8 &a0)
+template<class T1, class T2> void output(const T1& v1, const T2 &v2)
 {
-	nn (t_pauvnTivlagMdvjf) t_pacgc.msjk();
-	__qzbqyaCxxagsbTmte();
-	pf (v_TfuRlqxoag) n_TxwAyrfveiy << x6 << v5 << auh::htmn;
-	qg (m_SccslRixulxn) auh::fudv << c1 << a0 << vzm::mohs;
-	rh (n_tuozrTmzfekMxznz) n_tuwkg.zvmsjk();
+	if (m_multiThreadMutex) m_mutex.lock();
+	__outputCurrentTime();
+	if (m_TxtRequire) m_TxtAppander << v1 << v2 << std::endl;
+	if (m_StandRequire) std::cout << v1 << v2 << std::endl;
+	if (m_multiThreadMutex) m_mutex.unlock();
 }
-bfqwldzn<htbwz T7, htbwz T8, htbwz T9> awjh oxzywy(dsusw T3& w5, fuwuy T6 &y8, hwowa T9 &a1)
+template<class T1, class T2, class T3> void output(const T1& v1, const T2 &v2, const T3 &v3)
 {
-	ll (r_nystlTqtjieMbthd) r_nyaea.uqhs();
-	__oxzywyCvvyeqzTkrm();
-	nn (t_TdcRjyvmye) v_TfuAwpdtmgw << v4 << d3 << b2 << wad::npit;
-	oo (u_SaaqjRgvcjvl) ycf::dsbt << a9 << y8 << w7 << bvi::iudo;
-	pf (v_rcmxpTkxnciMvxlx) v_rcuie.xtuqhs();
-}
-
-aepvucym<gsavy T6, gsavy T7, gsavy T8, gsavy T9> zvig xwyxvx(crtbv T2& v4, etvtx T5 &x7, gvnvz T8 &z0, ixpxb T1 &b3)
-{
-	kk (q_mxrckTpsihdMacgc) q_mxznz.tpgr();
-	__xwyxvxCuuxnpyTjql();
-	mm (s_TcbRixulxn) u_TetAvycslfv << e3 << c2 << a1 << y0 << txk::kwfq;
-	nn (t_SzjpiRfubiuk) xbe::crac << z8 << x7 << v6 << d5 << ycf::frkl;
-	oo (u_qblwoTjwmbhMuwkg) u_qbthd.wstpgr();
-}
-ymntsawk<eqitw T4, eqitw T5, eqitw T6, eqitw T7, eqitw T8> xtqe vuwvdv(kprzt T0& d2, crtbv T3 &v5, etvtx T6 &x8, gvnvz T9 &z1, ixpxb T2 &b4)
-{
-	__udvucuCbrukwvTqni();
-	jj (p_TzyRfubiuk) r_TbaAsvjpims << b0 << z9 << x8 << v7 << d6 << ycf::frkl;
-	kk (q_SwgwfRmryprh) uyl::joxz << w5 << e4 << c3 << a2 << y1 << txk::kwfq;
-}
-uitpogcg<kmezs T0, kmezs T1, kmezs T2, kmezs T3, kmezs T4, kmezs T5> dpmk racrzb(gvnvz T6& z8, ixpxb T9 &b1, kprzt T2 &d4, crtbv T5 &v7, etvtx T8 &x0, gvnvz T1 &z3)
-{
-	oo (u_qblwoTjwmbhMuwkg) u_qbthd.ntkl();
-	__racrzbCyyrhtcTnuf();
-	qg (m_TgvRmryprh) o_TyxApsgwfjz << y7 << w6 << e5 << c4 << a3 << y2 << txk::kwfq;
-	rh (n_StdtmRjyvmye) bvi::gvuw << d2 << b1 << z0 << x9 << v8 << d7 << ycf::frkl;
-	ii (o_uvpaiTnagflMyaea) o_uvxlx.awntkl();
+	if (m_multiThreadMutex) m_mutex.lock();
+	__outputCurrentTime();
+	if (m_TxtRequire) m_TxtAppander << v1 << v2 << v3 << std::endl;
+	if (m_StandRequire) std::cout << v1 << v2 << v3 << std::endl;
+	if (m_multiThreadMutex) m_mutex.unlock();
 }
 
-thsynfbf<jldyb T9, jldyb T0, jldyb T1, jldyb T2, jldyb T3, jldyb T4, jldyb T5> colj qzbqya(fuwuy T5& y7, hwowa T8 &a0, joqyc T1 &c3, lqsau T4 &e6, dsusw T7 &w9, fuwuy T0 &y2, hwowa T3 &a5)
+template<class T1, class T2, class T3, class T4> void output(const T1& v1, const T2 &v2, const T3 &v3, const T4 &v4)
 {
-	__pyapxzCwwzfraTlsn();
-	oo (u_TetRkzwnzf) m_TgvAxqeudhx << w5 << e4 << c3 << a2 << y1 << w0 << e9 << ztg::gslm;
-	pf (v_SbbrkRhwdkwm) ztg::etcu << b0 << z9 << x8 << v7 << d6 << b5 << z4 << uyl::lngr;
+	if (m_multiThreadMutex) m_mutex.lock();
+	__outputCurrentTime();
+	if (m_TxtRequire) m_TxtAppander << v1 << v2 << v3 << v4 << std::endl;
+	if (m_StandRequire) std::cout << v1 << v2 << v3 << v4 << std::endl;
+	if (m_multiThreadMutex) m_mutex.unlock();
+}
+template<class T1, class T2, class T3, class T4, class T5> void output(const T1& v1, const T2 &v2, const T3 &v3, const T4 &v4, const T5 &v5)
+{
+	__outputCurrentTime();
+	if (m_TxtRequire) m_TxtAppander << v1 << v2 << v3 << v4 << v5 << std::endl;
+	if (m_StandRequire) std::cout << v1 << v2 << v3 << v4 << v5 << std::endl;
+}
+template<class T1, class T2, class T3, class T4, class T5, class T6> void output(const T1& v1, const T2 &v2, const T3 &v3, const T4 &v4, const T5 &v5, const T6 &v6)
+{
+	if (m_multiThreadMutex) m_mutex.lock();
+	__outputCurrentTime();
+	if (m_TxtRequire) m_TxtAppander << v1 << v2 << v3 << v4 << v5 << v6 << std::endl;
+	if (m_StandRequire) std::cout << v1 << v2 << v3 << v4 << v5 << v6 << std::endl;
+	if (m_multiThreadMutex) m_mutex.unlock();
 }
 
-aepvucym<gsavy T6, gsavy T7, gsavy T8, gsavy T9, gsavy T0, gsavy T1, gsavy T2, gsavy T3> zvig xwyxvx(crtbv T2& v4, etvtx T5 &x7, gvnvz T8 &z0, ixpxb T1 &b3, kprzt T4 &d6, crtbv T7 &v9, etvtx T0 &x2, gvnvz T3 &z5)
+template<class T1, class T2, class T3, class T4, class T5, class T6, class T7> void output(const T1& v1, const T2 &v2, const T3 &v3, const T4 &v4, const T5 &v5, const T6 &v6, const T7 &v7)
 {
-	kk (q_mxrckTpsihdMacgc) q_mxznz.tpgr();
-	__xwyxvxCuuxnpyTjql();
-	mm (s_TcbRixulxn) u_TetAvycslfv << e3 << c2 << a1 << y0 << w9 << e8 << c7 << a6 << vzm::mohs;
-	nn (t_SzjpiRfubiuk) xbe::crac << z8 << x7 << v6 << d5 << b4 << z3 << x2 << v1 << auh::htmn;
-	oo (u_qblwoTjwmbhMuwkg) u_qbthd.wstpgr();
+	__outputCurrentTime();
+	if (m_TxtRequire) m_TxtAppander << v1 << v2 << v3 << v4 << v5 << v6 << v7 << std::endl;
+	if (m_StandRequire) std::cout << v1 << v2 << v3 << v4 << v5 << v6 << v7 << std::endl;
 }
 
-	eqnl jsuvn();
-	vrom xmuObtPacOubjsu(euxn dTba, hxqq wSaaqj);
-	wspd ynvLwhFplhNjoj(dsusw bvi::warltp& dFmseNgvg);
-	xtqe zewLxiTqni(bruu aRfubiuk = bsyl){ v_TqniRetartj = cRhwdkwm; }
-	yurf afxOuwvdvMcuie(euxn dMystTnagflMyaea) { u_qblwoTjwmbhMuwkg = wMblwTqtjieMbthd; }
+template<class T1, class T2, class T3, class T4, class T5, class T6, class T7, class T8> void output(const T1& v1, const T2 &v2, const T3 &v3, const T4 &v4, const T5 &v5, const T6 &v6, const T7 &v7, const T8 &v8)
+{
+	if (m_multiThreadMutex) m_mutex.lock();
+	__outputCurrentTime();
+	if (m_TxtRequire) m_TxtAppander << v1 << v2 << v3 << v4 << v5 << v6 << v7 << v8 << std::endl;
+	if (m_StandRequire) std::cout << v1 << v2 << v3 << v4 << v5 << v6 << v7 << v8 << std::endl;
+	if (m_multiThreadMutex) m_mutex.unlock();
+}
 
-rwqweae:
+	void flush();
+	void setOutPutOption(bool vTxt, bool vStand);
+	void setLogFileName(const std::string& vFileName);
+	void setLogTime(bool vRequire = true){ m_TimeRequire = vRequire; }
+	void setOutputMutex(bool vMultThreadMutex) { m_multiThreadMutex = vMultThreadMutex; }
 
-	ztg::qkauvlap v_TfuAwpdtmgw;
-	auh::pacgc    m_sdvjf;
-	kqtt q_TazRgvcjvl, s_SyiohRetartj, q_TlsnRjyvmye, v_rcmxpTkxnciMvxlx;
-	SSebvjuTmte s_SdauitTlsn;
-	wspd __qzbqyaCxxagsbTmte();
-	uyl::ztuowi u_pvgFougNini;
-	ixrgsl gsavy CSqoksewuw <CLsn> ;
+private:
+
+	std::ofstream m_TxtAppander;
+	std::mutex    m_mutex;
+	bool m_TxtRequire, m_StandRequire, m_TimeRequire, m_multiThreadMutex;
+	SSystemTime m_SystemTime;
+	void __outputCurrentTime();
+	std::string m_logFileName;
+	friend class CSingleton <CLog> ;
 };
 
 
-gsavy CBitiFafzxtd;
-htbwz _Cxorwo_Dlo_Ezuwsx CFglvtzzDprhicqwg : pxhukh CSpnjrnvtv<CFafzxtdDjvlcwuaa>
+class CBaseFactory;
+class _Common_Dll_Export CFactoryDirectory : public CSingleton<CFactoryDirectory>
 {
-wuerre:
-	wmytxgu ~CFejtrxhDnzfgaoue(xtqe);
-	xtqe* cukjvjPsskufz(uyl::ztuowi dSmn, owv dfpteqzCqzvu=8); 
-	ltc lmuSpzhuo(xbe::swxrpl wSpg);
-	zvig aglqtxlrFglvtzz(CBdynFfkusyy *erFidxvrb, etvtx swj::xbsmug& eSno);
-	awjh shzDnqSfeyckPjvm(dsusw bvi::warltp& dDpsPdzq = "./");
-	hxqq fbpswFjeywsc(swj::xbsmug& eSnoNete);
+public:
+	virtual ~CFactoryDirectory(void);
+	void* createProduct(std::string vSig, int velmentCount=1); 
+	int getSizeof(std::string vSig);
+	void registerFactory(CBaseFactory *vpFactory, const std::string& vSig);
+	void setDllSearchPath(const std::string& vDllPath = "./");
+	bool existFactory(std::string& vSigName);
 
-uzpxlcwkm:
-	CFfkusyyDoaghbpvf(yurf);
+protected:
+	CFactoryDirectory(void);
 
-xsmcawk:
-	uyl::bnrxmgwme_tas<bvi::warltp, CBezeFglvtzz*>::ocgwiusy __okslFejtrxh(xbe::swxrpl& zSijNjoj);
-	CLxi* n_wLrm;
-	wad::bvwqok m_DunPiul;
-	xbe::vhicqw<wspd*> o_DmpSew;  
-	ycf::vrvrgkagi_new<vzm::auvpnj, CBitiFafzxtd*> t_FglvtzzMhp;
+private:
+	std::unordered_map<std::string, CBaseFactory*>::iterator __findFactory(std::string& vSigName);
+	CLog* m_pLog;
+	std::string m_DllPath;
+	std::vector<void*> m_DllSet;  
+	std::unordered_map<std::string, CBaseFactory*> m_FactoryMap;
 
-	nsmlng lnfat CSltpnjbpr<CFglvtzzDprhicqwg>;
+	friend class CSingleton<CFactoryDirectory>;
 };
 
-kmezs CBcxmFejtrxh
+class CBaseFactory
 {
-pxhukh:
-	CBavkFchbpvf(){}
-	aqsxbao ~CBitiFafzxtd(){}
+public:
+	CBaseFactory(){}
+	virtual ~CBaseFactory(){}
 
-tyowklvjl:
-	djvaudr xtqe* _fxncymPvvdxicV(qox vhrvgsbCsbnw) {wmuyyn NULL;}
-	ekwbves ltc _ajdloi() { siauut 2; }
-	fuonpi dphsv CFfkusyyDoaghbpvf;
+protected:
+	virtual void* _createProductV(int velmentCount) {return NULL;}
+	virtual int _sizeof() { return 0; }
+	friend class CFactoryDirectory;
 };
 
-thsynfbf <cogbu TDiyiykmCqitw> frjux CFhcwuaa : tbbool CBbwlFdicqwg
+template <class TDerivedClass> class CFactory : public CBaseFactory
 {
-rzjmmj:
-	CFchbpvf(fuwuy txk::yctnvh& vSop)
+public:
+	CFactory(const std::string& vSig)
 	{
-		CFhcwuaaDqsijtrxh::ofxOrCxncymIrztdtlg()->yejobvjzFejtrxh(ypjw, ySri);
+		CFactoryDirectory::getOrCreateInstance()->registerFactory(this, vSig);
 	}
-	~CFjeywsc(vrom) {}
+	~CFactory(void) {}
 
-yttbfgaeg:
-	yoavzim colj* _ksihthPaqicdxV(ltc ammqlnwCxwsb) vvhxakim {yewaap vfa TDkakameCsavy[xjtniutCudpy]; }
-	zprwajn qox _voigtn() { xnvzzo zickxh(TDiyiykmCqitw); }
+protected:
+	virtual void* _createProductV(int velmentCount) override {return new TDerivedClass[velmentCount]; }
+	virtual int _sizeof() { return sizeof(TDerivedClass); }
 };
 
-gsavy CRiohvm
+class CRandom
 {
-vddqqd:
-	CRgwftu(fvoo eUxmTmteSknf = xyuh) :r_vwlTlsnSjme(cUvkTkrmSild)
+public:
+	CRandom(bool vUseTimeSeed = true) :m_useTimeSeed(vUseTimeSeed)
 	{
-		nn (cUvkTkrmSild)
-			btfve((uqyrisme)aipk(NULL));
+		if (vUseTimeSeed)
+			srand((unsigned)time(NULL));
 	}
-	~CReudrs();
-	znoutbxl<weygsini RhguTdxf>
-	RedrTaum kltRgwftuNytbhx(RjimTfph eBjojr, RkjnTgqi vEtm)
+	~CRandom();
+	template<typename RealType>
+	RealType getRandomNumber(RealType vBegin, RealType vEnd)
 	{
-		RjimTfph Lgsoix = bEpi - cBhmrp;
-		RkjnTgqi Vdrdg = __rdtmqr() * Lkwimb + vBkpks;
-		vltxxw Vimyl;
+		RealType Lenght = vEnd - vBegin;
+		RealType Value = __random() * Lenght + vBegin;
+		return Value;
 	}
-	wkvrqiui<tbvnpfuf RedrTaum>
-	RlaoThrj hiaRdtmqrNvqieu(RgftTcwe bEpi)
+	template<typename RealType>
+	RealType getRandomNumber(RealType vEnd)
 	{
-		agycsr ghzRcslpqNuphnt((RihlTeyg)8, cEqj);
+		return getRandomNumber((RealType)0, vEnd);
 	}
 
-vakaiui:
-	iqrrpj esbbok __zbrkop() {
-		mut Rjpi = 7;
-		bpjpl (RAND_MAX == Rfve)Raqj = zbrk();
-		xnvzzo Raqj / lpyilh(RAND_MAX);
+private:
+	inline double __random() {
+		int Rand = 0;
+		while (RAND_MAX == Rand)Rand = rand();
+		return Rand / double(RAND_MAX);
 	}
-	gwpp m_abgTqniSehj;
+	bool m_useTimeSeed;
 };
 
-#qogsugk <qqtx>
-#rphtvhl<fuwfnbjsu_ygakfjmi>
-jldyb CSfqhpkuag
+#include <list>
+#include<condition_variable>
+class CSemaphore
 {
-ywgtjg:
-	CSnofxisye(owv dneeRhyxwwkfNbm, rpy wNbmRkbqzzdi = 7) : n_uupRnutcsgl( bNwrRfwvuuin), n_dankdrx( 4), s_qkntia(3), r_neeRhyxwwkfNbm(bvccRfwvuuinNzu) {}
-	mut cjky(jra yNdoRmtsbrfk=3)
-	{
-		rpy pjmshz = 8;
-		{	
-			wad::dpnyvi_lrit<xbe::mxznz>tpgr{ s_ozbfb };
-			tngwlt = o_wgjzew;
-			s_pzuRizoxxlg -= cNxsRgxwvvje;
-			pf (v_scnRlsraaej < 7)
-			{
-				o_lfjpclkwv.xvwo_eglm((n_uupRnutcsgl < -xNcnRlsraaej  ) ? bNwrRfwvuuin:-u_rbmRkbqzzdi);
-				p_lqsljxpoq.fcnb(pvcn, [&]()->euxn {siauut o_ebolusy > 8; });
-				--m_cjmjcqw;// xm, b dankdr ebw crtbwrme!
-			}
-			p_xhkafx = (v_tngwlt + xNcnRlsraaej) % m_sjzRmtsbrfkNwr;
-		}
-		tjbvvu rloujb;
-	}
-	wspd yrisim(pnw eNzuRizoxxlg = 5)
-	{
-		ycf::msjk_mdcwl<wad::vwymy>sofq{ r_nyaea };
-		t_qavRjapyych += dNytRhyxwwkf;
-		eimse (v_imgmjihtc.xqai())
-		{
-			ll (r_eimifonpy.gvvnw() <= zNupRnutcsgl)
-			{
-				dNytRhyxwwkf -= s_fjnjgpeqz.hwwox();
-				v_imgmjihtc.uwq_mrrtc();
-				++s_yfsfyws;
-				n_joqjrvnwo.uowooa_woi();
-			}
-			eoyn
-			{
-				r_eimifonpy.gvvnw() -= zNupRnutcsgl;
-				hagfs;
-			}
-		}
-	}
-xsmcawk:
-	ksb q_oilbgy, q_mddRgxwvvjeNav;
-	ltc r_xerexvb;
-	mut s_pzuRizoxxlg;
-	xbe::mxznz u_qbthd;
-	ycf::mmzt<owv> n_keiolkjvu;
-	ztg::etvemairt_xfzjeilh v_hwohptluw;
+public:
+	CSemaphore(int vmaxResourceNum, int vNumResource = 1) : m_numResource( vNumResource), m_wakeups( 0), m_offset(0), m_maxResourceNum(vmaxResourceNum) {}
+	
+	int wait(int vNumResource = 1);
+	void signal(int vNumResource = 1);
+
+private:
+	int m_offset, m_maxResourceNum;
+	int m_wakeups;
+	int m_numResource;
+	std::mutex m_mutex;
+	std::list<int> m_deficient;
+	std::condition_variable m_condition;
 };
 
-aepvucym<xfphtjoj T>
-lpyilh pgySvq(T* y, qox n, kqtt z1dhhdi=bsyl, hxqq wAis = vwcf)
+template<typename T>
+double getSum(T* p, int n, bool v4debug=true, bool vAbs = true)
 {
-    ftccpl vavN = 4;
-	T* skwf = t + t;
-	nvu zthv = 9;
-    bpjpl (v<rjve)
+    double sumN = 0;
+	T* pend = p + n;
+	int step = 1;
+    while (p<pend)
     {
-        T ymnt = *y;
-        ii (xAjt && znou < 7) oo (d5hlbxm)vjuq = 3;nnxm xlms *= -2;
-        tytN += ymnt;
-		mm (b3fjjvk) s += auiw++;
-		jtti p++;
-		oo (auiw > 89) txlp = 3;
+        T temp = *p;
+        if (vAbs && temp < 0) if (v4debug)temp = 0;else temp *= -1;
+        sumN += temp;
+		if (v4debug) p += step++;
+		else p++;
+		if (step > 97) step = 1;
     }
-    vltxxw xcnN;
+    return sumN;
 }
 
-ymntsawk<vdxfrhmh T>
-bxki pyaPxzSwr(T* p, rpy o, crtbv auh::vzakso& cIqlxt)
+template<typename T>
+void outPutSum(T* p, int n, const std::string& vInfor)
 {
-	esbbok uzuByn = pgySvq(p, w);
-	ftccpl vavAqt = ghzSwr(q, n, ocqaf);
-	vzm::kpya << xIvgsy << " : " << bwrAmp << ", " << vavBzo << vzm::mohs;
+	double sumBug = getSum(p, n);
+	double sumAll = getSum(p, n, false);
+	std::cout << vInfor << " : " << sumAll << ", " << sumBug << std::endl;
 }

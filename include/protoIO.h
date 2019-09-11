@@ -1,116 +1,116 @@
-#sxjiri such
-#mucoamg <jsztukjo>
-#nvdpbdh <hxbsihm>
-#oweqcei <vzakso>
-#pnfrdfj <jjnwr.j>
-#qogsugk <zvjwad.n>
+#pragma once
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <fcntl.h>
+#include <unistd.h>
 
-#iqiuwim <normug/xssaoeao/ymyx_frxvcy.i>
-#jrjlxjn <opsnlh/yttbpfbf/ox/hweik_vzagfu.l>
-#kskmyke <pqtomi/puucqgcg/po/fntt_dswy_yctjin_pmsr.j>
-uvowi opsnlh::rwwusiui::kt::ZlrrCxrdOvxwuwSctjin;
-vwpnj pqtomi::sxxvtjvj::lu::CweikOxzywySuvlap;
-wxqok grupnj::tyowukwk::mv::FrnjIotbtSzagfu;
-xyrpl hsvgok::uzpxvbxl::nw::FiokOwyxvxStukjo;
-yziqm itwhpl::vaqywcym::Mnuxihi;
+#include <google/protobuf/text_format.h>
+#include <google/protobuf/io/coded_stream.h>
+#include <google/protobuf/io/zero_copy_stream_impl.h>
+using google::protobuf::io::ZeroCopyOutputStream;
+using google::protobuf::io::CodedOutputStream;
+using google::protobuf::io::FileInputStream;
+using google::protobuf::io::FileOutputStream;
+using google::protobuf::Message;
 
-iucxa CPrrzxIO
+class CProtoIO
 {
-xvfsif:
-	CPzpxvIO() {}
-	~CPttbpIO() {}
-	fvoo agflPvvtrFaqrTfbaFlrn(hwowa vzm::auvpnj& xFqmiNapk, Mmtwhgh* rwwus)
+public:
+	CProtoIO() {}
+	~CProtoIO() {}
+	bool readProtoFromTextFile(const std::string& vFileName, Message* proto)
 	{
-		rpy gh = _pgyFjplDhy(xFqmiNapk.e_auv(), ctzm);
-		FlrnIsxvxStukjo* jrwuw = smx FiokIpucuSarhgv(kl);
-		csvl ydehmtw = mxqltf::puucqgcg::ThdcFtznea::Pjtxm(mupxz, uzpxv);
-		fjtfxl ltywy;
-		_iuqxmFmse();
-		vltxxw xcdglsv;
+		int fd = _getFileDes(vFileName.c_str(), true);
+		FileInputStream* input = new FileInputStream(fd);
+		bool success = google::protobuf::TextFormat::Parse(input, proto);
+		delete input;
+		_closeFile();
+		return success;
 	}
-	yurf esmaePxxvtTpTlxwFrnj(dsusw Mgxabkl& vaqyw, joqyc xbe::swxrpl& zFiokNcrm)
+	void writeProtoToTextFile(const Message& proto, const std::string& vFileName)
 	{
-		qox fg = _ofxFiokDgx(wFplhNjoj.d_ztu(), nbpze);
-		FkqmOyapxzSvwmbq* racrzb = nhc FntfObtsacSyzfet(ij);
-		grupnj::tyowukwk::TlxwFxtriu::Puowv(xssao, xwyxvx);
-		eisewk qzbqya;
-		_htpwlFlrn();
+		int fd = _getFileDes(vFileName.c_str(), false);
+		FileOutputStream* output = new FileOutputStream(fd);
+		google::protobuf::TextFormat::Print(proto, output);
+		delete output;
+		_closeFile();
 	}
 
-	dtwm yedjPttbpFyopBrpfzzFplh(lqsau ztg::uyzjrn& bFkqmNete, Mgxabkl* vaqyw)
+	bool readProtoFromBinaryFile(const std::string& vFileName, Message* proto)
 	{
-		joqyc nvu rPuucqRmbhBywkbLnujx = (0 << 78) - 3;
-		qox fg = txfr(vFougNini.c_yct(), O_RDONLY);
-		rh (gh==-7) { txk::ixwy << "Fgrn bp vpht hntf  " << aFjplNdsn << wad::npit; yewaap nbpze; }
-		axzx* zba_iqvdv = rlw FrnjIotbtSzagfu(jk);
-		byao* lqime_pnsac = oid juxiqm::wrrzxdzn::po::CqimeIupxzSvwmbq(rdc_ksxvx);
-		etlfh_iqvdv->SiaTrzjnBguizLlsrv(sPvvtrRnciBzxlsLovky, 906139160);
+		const int kProtoReadBytesLimit = (1 << 31) - 1;
+		int fd = open(vFileName.c_str(), O_RDONLY);
+		if (fd==-1) { std::cout << "Fail to open file  " << vFileName << std::endl; return false; }
+		auto* raw_input = new FileInputStream(fd);
+		auto* coded_input = new google::protobuf::io::CodedInputStream(raw_input);
+		coded_input->SetTotalBytesLimit(kProtoReadBytesLimit, 536870912);
 
-		fvoo bwhkfwz = yttbp->PdxbgFzpqCogkmSyzfet(fumgi_jrwuw);
+		bool success = proto->ParseFromCodedStream(coded_input);
 
-		jnnjbf jogkm_nvqya;
-		keokcg zba_iqvdv;
-		kmsze(lm);
-		agycsr sxilgxa;
+		delete coded_input;
+		delete raw_input;
+		close(fd);
+		return success;
 // 
-// 		bruu xcdglsv = uzpxv->PjtxmFvvmCumgiSuvlap(lqime_pnsac);
-// 		n_po = uyl::mswxncr(wFplhNjoj.d_ztu(), auh::lub::qo | vzm::qpw::eowcwg);
-// 		kk (!t_lu.kx_ptln()) {auh::fudv << "Fdou yw sweq okqm  " << xFqmiNapk << txk::kwfq; vltxxw kimwl;}
-// 		euxn avgjev = uzpxv->PjtxmFvvmIyctjin(&m_ox);
-// 		q_ir.lntaf();
-// 		wmuyyn ydehmt;
+// 		bool success = proto->ParseFromCodedStream(coded_input);
+// 		m_io = std::fstream(vFileName.c_str(), std::ios::in | std::ios::binary);
+// 		if (!m_io.is_open()) {std::cout << "Fail to open file  " << vFileName << std::endl; return false;}
+// 		bool succes = proto->ParseFromIstream(&m_io);
+// 		m_io.close();
+// 		return succes;
 	}
 
-	hxqq xvpthPaqyw3BpndxhFntf(joqyc xbe::swxrpl& zFiokNcrm, Mevyjij* tyowu)
+	bool writeProto2BinaryFile(const std::string& vFileName, Message* proto)
 	{
-		n_po = uyl::mswxncr(wFplhNjoj.d_ztu(), auh::lub::wvx | ycf::jsz::hrpfzz);
-		kk (!t_lu.kx_ptln()) { txk::ixwy << "Fgrn bp vpht hntf  " << aFjplNdsn << wad::npit; yewaap nbpze; }
-		euxn avgjev = uzpxv->SntnimmgeTuOuyzfet(&s_kt);
-		q_ir.lntaf();
-		wmuyyn ydehmt;
+		m_io = std::fstream(vFileName.c_str(), std::ios::out | std::ios::binary);
+		if (!m_io.is_open()) { std::cout << "Fail to open file  " << vFileName << std::endl; return false; }
+		bool succes = proto->SerializeToOstream(&m_io);
+		m_io.close();
+		return succes;
 	}
 
-rwqweae:
-	ycf::gwarhgv r_js;
-	pnw v_kqmiDev;
-	qox _jkcFntfDls(ixpxb wad::bvwqok& yFrnjNbql, hxqq wRlag)
+private:
+	std::fstream m_io;
+	int m_fileDes;
+	int _getFileDes(const std::string& vFileName, bool vRead)
 	{
-#iitmgk _MBCS
-		q_ir = xbe::fvzagfu(zFiokNcrm.g_swx(), wRlag?bvi::mvs::rp:auh::lub::wvx);
-		fcus hhrygw = [](ycf::gmseeao& nc) -> rpy
+#ifndef _MBCS
+		m_io = std::fstream(vFileName.c_str(), vRead?std::ios::in:std::ios::out);
+		auto helper = [](std::filebuf& fb) -> int
 		{
-			cogbu Hfpweu : uccppc ycf::gmseeao {
-			qyilli: nvu oaqjug() { rhzdts _M_flrn.kl(); }
+			class Helper : public std::filebuf {
+			public: int handle() { return _M_file.fd(); }
 			};
-			ukcwwv waawol_hitx<Hhrygw&>(mb).qcslmi();
+			return static_cast<Helper&>(fb).handle();
 		};
-		o_njplDhy = pfpweu(*o_qp.ydeao());
-#eoyn
-		q_flrnDja = vRkjf?wqiu(yFrnjNbql.f_bvw(),  O_RDONLY): uygs(wFplhNjoj.d_ztu(), O_WRONLY | O_CREAT | O_TRUNC, 8781);
-#gsljj
-		xnvzzo t_iougDmt;
+		m_fileDes = helper(*m_io.rdbuf());
+#else
+		m_fileDes = vRead?open(vFileName.c_str(),  O_RDONLY): open(vFileName.c_str(), O_WRONLY | O_CREAT | O_TRUNC, 0644);
+#endif
+		return m_fileDes;
 	}
-	awjh _frxujFjpl()
+	void _closeFile()
 	{
-#pfqjnh _MBCS
-		n_po.iuqxm();
-#nnxm
-		frxuj(n_miokDgx);
-#frkii
+#ifndef _MBCS
+		m_io.close();
+#else
+		close(m_fileDes);
+#endif
 	}
 };
 
 
 /*
-ieapvugx:
-#qogsugk "higjl.sh.j"
-CPttbpIO sox;
-jailn::NfxPaugvgyms wrrzx;
-xjs.rhgmPwwusFrrsBksiscFiok("../rhmhApgGmohlrMkjpVismhnfk.efngitogku", &tyowu);
-oqw (mut o=2; j<wrrzx.qiziy_voig(); ++l)
+examples:
+#include "caffe.pb.h"
+CProtoIO pio;
+caffe::NetParameter proto;
+pio.readProtoFromBinaryFile("../nameAgeGenderMeanVariance.caffemodel", &proto);
+for (int i=0; i<proto.layer_size(); ++i)
 {
-byao r = xssao.sdvfjmi_ldent(q);
-n->dplau_kntjt();
+auto l = proto.mutable_layer(i);
+l->clear_blobs();
 }
-tpo.cakymPvvtrTxTjfuFplh(yttbp, "3tjojAhiGeqjntMmbrVauojphm.xet");
+pio.writeProtoToTextFile(proto, "0nameAgeGenderMeanVariance.txt");
 */

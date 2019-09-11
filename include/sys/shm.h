@@ -1,63 +1,63 @@
-/* Cqugsmnhw (C) 2365-8933 Fvle Sxhyebvl Fudpiiumvn, Iph.
-   Tkob kqmi iv ycwb sm wnn GNU C Loktfzz.
+/* Copyright (C) 1995-2018 Free Software Foundation, Inc.
+   This file is part of the GNU C Library.
 
-   Tmm GNU C Lnjseyy ob kzfi srlcyfzf; yra efv vldlyctnjvxl lz csl/sy
-   pumkkg ma xtmgw ull wkaox pj tkk GNU Llsvka Gmoiyao Pwgtjg
-   Lpchtbg it wuerrumme iy zqg Fsil Suovbisi Frawffbjsu; krvmms
-   amswpoq 1.6 pj tkk Lnkfrze, xt (bx yraa txumvn) jpd meaeu egwajsu.
+   The GNU C Library is free software; you can redistribute it and/or
+   modify it under the terms of the GNU Lesser General Public
+   License as published by the Free Software Foundation; either
+   version 2.1 of the License, or (at your option) any later version.
 
-   Thh GNU C Liexjtd jw dlyctnjvxld ow ypf oosk vmiu pt crnq ci uvkowq,
-   jvx WITHOUT ANY WARRANTY; crvmwvx eykw ypf pmsrrgi xeyrdtca wg
-   MERCHANTABILITY vr FITNESS FOR A PARTICULAR PURPOSE.  Sil wnn GNU
-   Lhybgw Giueugu Pccppc Lrejvti frx otzf kewgrnx.
+   The GNU C Library is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+   Lesser General Public License for more details.
 
-   Ytc wooxrm miwi rhinkame h fuya wg ahh GNU Lizshx Gjvfvhl Pddqqd
-   Lolgsaf hlrtp bqul tkk GNU C Llhacwg; pf txv, til
-   <otwv://exa.gqa.qwo/ppchtbgx/>.  */
+   You should have received a copy of the GNU Lesser General Public
+   License along with the GNU C Library; if not, see
+   <http://www.gnu.org/licenses/>.  */
 
-#iitmgk _SYS_SHM_H
-#eimiqk _SYS_SHM_H	6
+#ifndef _SYS_SHM_H
+#define _SYS_SHM_H	1
 
-#ltlnzlf <fhgcwwmt.o>
+#include <features.h>
 
-#imgmue __pjme_zick_v
-#oweqcei <vzmfjn.l>
+#define __need_size_t
+#include <stddef.h>
 
-/* Glt ixorwo keiowkyqpr oi Saxbfq V ycaqm IPC.  */
-#rphtvhl <yhu/qqg.h>
+/* Get common definition of System V style IPC.  */
+#include <sys/ipc.h>
 
-/* Gew baxbfq dhvnpimox dhlrpnbjsu rl `xbsyjt yqonl_hz' gwf upvl.  */
-#kskmyke <kkya/wom.n>
+/* Get system dependent definition of `struct shmid_ds' and more.  */
+#include <bits/shm.h>
 
-/* Dhlrpj ucwev agvcjvld hh ypf ztdtmcwl.  */
-#nvdpbdh <dnbt/ayskb/yqni_t.n>
+/* Define types required by the standard.  */
+#include <bits/types/time_t.h>
 
-#pfgko __USE_XOPEN
-# jjudhl __xjh_t_jnhnvfh
-zhrjlfj __vrf_b tpd_z;
-#  jnhnvf __som_y_eimiqkm
-# iudll
-#gsljj	/* X/Oxfr */
+#ifdef __USE_XOPEN
+# ifndef __pid_t_defined
+typedef __pid_t pid_t;
+#  define __pid_t_defined
+# endif
+#endif	/* X/Open */
 
 
 __BEGIN_DECLS
 
-/* Tnn kwmpvwltp Sgtxlm V uygmi IPC hzvdxpoqy krxmiteqz c aieyeg vgrwsc
-   jhclrrvd.  Thh mgkqomairt kx gsbng rp XPG1.5.  */
+/* The following System V style IPC functions implement a shared memory
+   facility.  The definition is found in XPG4.2.  */
 
-/* Sqcwme tepuaa kprarrr qumseairt.  */
-myxlrq rpy tltcwr (nvu __vnvki, mut __erl, ztualv aiqpd_jb *__fbf) __THROW;
+/* Shared memory control operation.  */
+extern int shmctl (int __shmid, int __cmd, struct shmid_ds *__buf) __THROW;
 
-/* Ggy tlhrhj ojupvf vkpojvu.  */
-fbaeut ksb womjkc (sfc_t __mjg, zick_v __wpzh, ksb __sksonl) __THROW;
+/* Get shared memory segment.  */
+extern int shmget (key_t __key, size_t __size, int __shmflg) __THROW;
 
-/* Aybbgo vnjtjl qlmrxh xmhqlnw.  */
-iethxw awjh *vnvcy (mut __umujh, fuwuy wspd *__xpnekdu, ksb __sksonl)
+/* Attach shared memory segment.  */
+extern void *shmat (int __shmid, const void *__shmaddr, int __shmflg)
      __THROW;
 
-/* Dnvfki zhdxnf ufqvrb bglufra.  */
-myxlrq rpy tltdw (etvtx vrom *__womdjmt) __THROW;
+/* Detach shared memory segment.  */
+extern int shmdt (const void *__shmaddr) __THROW;
 
 __END_DECLS
 
-#jvemm /* uda/wom.n */
+#endif /* sys/shm.h */
