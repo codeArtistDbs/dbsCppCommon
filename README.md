@@ -1,13 +1,23 @@
-# cppCommon
+## cppCommon
+```
+useful c++ functions for file time log factory string random and CSemaphore.
+```
 
-useful c++ functions for file time log factory string and random.
+## create static or shared lib
+```
+git clone https://github.com/codeArtistDbs/dbsCppCommon.git cppCommon
 
-
-# create static lib
-
-git clone https://github.com/codeArtistDbs/dbsCppCommon.git
-
-cd dbsCppCommon 
-mkdir lib && mkdir build && cd build 
+cd cppCommon 
+mkdir lib 
+mkdir build 
+cd build 
 cmake ../src/Common/ && make -j
 ln -s $(pwd)/libCommon.a ../lib/libCommon.a
+```
+
+##获取已编译好的库ubuntu、tx2
+```
+git clone -b ubuntu https://github.com/codeArtistDbs/dbsCppCommon.git cppCommon
+git clone -b tx2 https://github.com/codeArtistDbs/dbsCppCommon.git cppCommon
+git clone -b nano https://github.com/codeArtistDbs/dbsCppCommon.git cppCommon
+```
