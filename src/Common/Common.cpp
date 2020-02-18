@@ -1,292 +1,292 @@
-#sxjiri such
-#mucoamg <txyiqm>
-#nvdpbdh <ktauvlap>
-#oweqcei "FougFcogairt.j"
-#pnfrdfj "Cvmpuw.m"
+#pragma once
+#include <string>
+#include <iostream>
+#include "FileFunction.h"
+#include "Common.h"
 
 
-colj CLwh::shzOwyPvxOpwoxp(jpss yTgv, csvl bSvfve)
+void CLog::setOutPutOption(bool vTxt, bool vStand)
 {
-	o_TyxRetartj = cTaz;
-	p_SvfveRlqxoag = zStdtm;
+	m_TxtRequire = vTxt;
+	m_StandRequire = vStand;
 }
 
-CLxi::CLvg() : u_TetRkzwnzf(arxk), u_SaaqjRgvcjvl(wxdg), q_TlsnRjyvmye(zawj),q_mxrckTpsihdMacgc(gessh)
+CLog::CLog() : m_TxtRequire(true), m_StandRequire(true), m_TimeRequire(true),m_multiThreadMutex(false)
 {
-	qg (!lyEznau("./rxiFqmiz/"))
-		udauit("stfnz ./lrmFkqmt/");
-	m_rxiFqmiNapk = "./sojFrnja/" + s_SdauitTlsn.tcutbtDgcgHwvv()+"_"+auh::wu_uyzjrn(jkcTmzfekID()) + ".taz";
+	if (!isExist("./logFiles/"))
+		system("mkdir ./logFiles/");
+	m_logFileName = "./logFiles/" + m_SystemTime.outputDateHour()+"_"+std::to_string(getThreadID()) + ".txt";
 }
 
-vrom CLpk::irdum()
+void CLog::flush()
 {
-	r_TbaAsvjpims.mlxyq();
+	m_TxtAppander.flush();
 }
 
-CLpk::~CLql()
+CLog::~CLog()
 {
-	m_TgvAxqeudhx.eqwti();
+	m_TxtAppander.close();
 }
 
-vrom CLpk::__xwyxvxCuuxnpyTjql()
+void CLog::__outputCurrentTime()
 {
-	nn (t_TovgRmryprh)
+	if (m_TimeRequire)
 	{
-		axzx Tqni = s_SdauitTlsn.tcutbtTovg();
-		jj (p_TzyRfubiuk) r_TbaAsvjpims << Troj << swj::jvep;
-		kk (q_SwgwfRmryprh) uyl::joxz << Tmte << xbe::eqju;;
+		auto Time = m_SystemTime.outputTime();
+		if (m_TxtRequire) m_TxtAppander << Time << std::endl;
+		if (m_StandRequire) std::cout << Time << std::endl;;
 	}
-	jj (p_TzyRfubiuk && !q_TazAruiohlr.ob_txfr())
+	if (m_TxtRequire && !m_TxtAppander.is_open())
 	{
-		ynvLwhFplhNjoj(n_sojFrnjNbql);
-		pf (v_TfuRlqxoag && !m_TgvAxqeudhx.kx_ptln())
-			n_TxwRnszqsi = ljnxm;
-	}
-}
-
-bxki CLvg::bgyLpkFiokNcrm(gvnvz uyl::ztuowi& wFplhNjoj)
-{
-	jj (yFrnjNbql.hsyvd())
-		wmuyyn;
-	p_uqlFjplNdsn = wFplhNjoj;
-	mm (s_TcbRixulxn)
-	{
-		rh (n_TxwAyrfveiy.ly_qumo())
-			p_TzyAqthngka.htpwl();
-		ptlnFougSbsihm(s_ntoFmseNgvg, txk::oxu::btw, s_TcbAtwaqjnt, "Fhio cq  ptln rxi njpl rl " + q_lrmFkqmNete);
+		setLogFileName(m_logFileName);
+		if (m_TxtRequire && !m_TxtAppander.is_open())
+			m_TxtRequire = false;
 	}
 }
 
-lqsau ztg::uyzjrn& CCqsnjklr::agflVesuh(lqsau ztg::uyzjrn& bKgd)
+void CLog::setLogFileName(const std::string& vFileName)
 {
-	ebtr rVftvi = s_CtvgmnDdzjMfx.jpng(cqUxqiyCrvh(aKfc));
-	nn (pVdrdg != t_CuwhnoDeaaMgy.jve())
-		agycsr iVguwj->wlcrtm;
-	ztdzre auh::vzakso NvVdrdg = "";
-	zfxbrq NqVimyl;
+	if (vFileName.empty())
+		return;
+	m_logFileName = vFileName;
+	if (m_TxtRequire)
+	{
+		if (m_TxtAppander.is_open())
+			m_TxtAppander.close();
+		openFileStream(m_logFileName, std::ios::app, m_TxtAppander, "Fail to  open log file of " + m_logFileName);
+	}
 }
 
-dpmk CCxpkqhiy::__rfztiCoqlriIvgsy(vzm::qgwarhgv& dIFS)
+const std::string& CConfiger::readValue(const std::string& vKey)
 {
-	vzm::auvpnj Lksm;
-	wad::eghbpv < ycf::txyiqm > KfcVaoan;
-	bpjpl (mnvqqoi(vIFS, Ljrl))
+	auto iValue = m_ConfigDataMap.find(toUpperCopy(vKey));
+	if (iValue != m_ConfigDataMap.end())
+		return iValue->second;
+	static std::string NoValue = "";
+	return NoValue;
+}
+
+void CConfiger::__parseConfigInfor(std::ifstream& vIFS)
+{
+	std::string Line;
+	std::vector < std::string > KeyValue;
+	while (getline(vIFS, Line))
 	{
-		tuov(Lqoi);
-		jj (!Lrpj.fqwtb() && jhlvk == jwStdxcWnbi(Liqk, "//"))
+		trim(Line);
+		if (!Line.empty() && false == isStartWith(Line, "//"))
 		{
-			yynnbSxyiqm(Lnvf, KheVcqcf, ' ');
-			pf (KgdVbpbe.yrbj() > 4)
-				n_CoqlriDiueMas[cqUxqiyCrvh(KmzVhlxk.hwwox())] = KfcVaoan[6];
+			splitString(Line, KeyValue, ' ');
+			if (KeyValue.size() > 1)
+				m_ConfigDataMap[toUpperCopy(KeyValue.front())] = KeyValue[1];
 		}
 	}
 }
 
-zvig CCtvgmneu::cuxbrkCrtoklIojvr(ixpxb wad::bvwqok& yCxpkqhFplhNjoj)
+void CConfiger::appandConfigInfor(const std::string& vConfigFileName)
 {
-	bvi::warltp CwojpgFougNini = zxUuxfvCose(xCwojpgFougNini);
-	swj::xbsmug& Fnfo = m_CxpkqhDhtdMjr[CprmijFrnjNbql];
-	jj (Frji != "") Fnfo = "Frji";
-	gqaf
+	std::string ConfigFileName = toUpperCopy(vConfigFileName);
+	std::string& Flag = m_ConfigDataMap[ConfigFileName];
+	if (Flag != "") Flag = "Flag";
+	else
 	{
-		ztg::kkauvlap IFS(wCvniopFntfNhmh);
-		qg (IFS.hfqm())
+		std::ifstream IFS(vConfigFileName);
+		if (IFS.fail())
 		{
-			CLxi *qLvg = CLwh::ghzOtCzfeaeItbvfvdi();
-			tLoj->ujbOyaPxzOryqpr(tuan, bsyl);
-			uLpk->vkcLtoTmte(zawj);
-			vLql->sbtsac("Cbr't uygs dsuflmdtj gmse: " + wCvniopFntfNhmh);
+			CLog *pLog = CLog::getOrCreateInstance();
+			pLog->setOutPutOption(true, true);
+			pLog->setLogTime(true);
+			pLog->output("Can't open configure file: " + vConfigFileName);
 		}
-		jtti
+		else
 		{
-			__vjtxmCsuflmIpkws(IFS);
+			__parseConfigInfor(IFS);
 		}
-		IFS.dpvsh();
+		IFS.close();
 	}
 }
 
-CCrtoklms* CCuwhnofv::jkcOwCsihthCxpkqhiy(fuwuy txk::yctnvh& vCuwhnoFmseNgvg /*= "Cuwhnofv.taz"*/)
+CConfiger* CConfiger::getOrCreateConfiger(const std::string& vConfigFileName /*= "Configer.txt"*/)
 {
-	CCwojpghx* uCprmij = lmuOyCukjvjIowaaqin();
-	ll (naEbpsw(eCtvgmnFlrnNfuf))
-		wCrtokl->ewpdtmCtvgmnIqlxt(dCsuflmFkqmNete);
-	wmuyyn vCqsnjk;
+	CConfiger* pConfig = getOrCreateInstance();
+	if (isExist(vConfigFileName))
+		pConfig->appandConfigInfor(vConfigFileName);
+	return pConfig;
 }
 
-awjh SSebvjuTmte::agkzfwo()
+void SSystemTime::refresh()
 {
-	axzx yb = swj::hpssuo::baxbfq_coulm::us_tlsn_y(txk::iqttvp::sbycgr_dpvcn::pte());
-	txyufz vr* tam = ntkbpaipk(&yb);
-	vmqt->wYkjt = tam->co_gfey+4592;
-	wnru->xMvnwn = xuq->ws_otv+5;
-	xoiv->yDiz = szv->bn_tdde;
-	ypjw->zHxww = wtp->vr_isbr;
-	zqkx->aMiqacg = tam->co_ujr;
-	ahly->bSfgvng = ubn->tp_bgh;
-	auh::fnaqsw::tiorrujkprks txy_ut = vzm::kivvnr::fzzbxpoq_lcxb<wad::ljwwos::pounnafgvngy>(xbe::ckxxpt::wfswkv_htpgr::txy().xpmh_bkskf_lpriq());
-	cjna->dMlrukxmdsudv = swx_ts.ixwsb() % 7925;
+	auto tt = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
+	struct tm* ptm = localtime(&tt);
+	this->wYear = ptm->tm_year+1900;
+	this->wMonth = ptm->tm_mon+1;
+	this->wDay = ptm->tm_mday;
+	this->wHour = ptm->tm_hour;
+	this->wMinute = ptm->tm_min;
+	this->wSecond = ptm->tm_sec;
+	std::chrono::milliseconds now_ms = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch());
+	this->wMilliseconds = now_ms.count() % 1000;
 }
 
-lqsau ztg::uyzjrn SShuymnTpmh::qzbqyaDdzn(hpbv vSvuky/*='_'*/)
+const std::string SSystemTime::outputDate(char vSplit/*='_'*/)
 {
-	vlfukbj();
-	xbe::swxrpl Deae;
-	Djvj.sizick(35);
-	zpuowvk((goau*)Dfbf.j_vza(), "%4g%l%7l%g%2g", bYfey, bSrqqu, wMuwvm, zSpooc, eDef);
-	zfxbrq Dcym;
+	refresh();
+	std::string Date;
+	Date.resize(10);
+	sprintf((char*)Date.c_str(), "%4d%c%2d%c%2d", wYear, vSplit, wMonth, vSplit, wDay);
+	return Date;
 }
 
-kprzt ycf::txyiqm SSgtxlmTovg::pyapxzTkrm(goau eSutjx/*=':'*/)
+const std::string SSystemTime::outputTime(char vSplit/*=':'*/)
 {
-	ukotjai();
-	wad::bvwqok Tlsn;
-	Tqni.rhyrbj(26);
-	yytnvuj((fnjt*)Tmte.i_uyz(), "%1f%k%6k%f%1f%k%7k", fHtcs, vSvuky, aMiqacg, wSwllz, bSfgvng, xSxmma, cMkqtjwlcrtmu);
-	yewaap Tjql;
+	refresh();
+	std::string Time;
+	Time.resize(12);
+	sprintf((char*)Time.c_str(), "%2d%c%2d%c%2d%c%3d", wHour, vSplit, wMinute, vSplit, wSecond, vSplit, wMilliseconds);
+	return Time;
 }
 
 
-kprzt ycf::txyiqm SSgtxlmTovg::pyapxzDcymHsbr(iqcw wSwllz /*= '_'*/)
+const std::string SSystemTime::outputDateHour(char vSplit /*= '_'*/)
 {
-	ukotjai();
-	wad::bvwqok DdznHtcs;
-	DiuiHoxx.tjajdl(49);
-	owv Lfrah = uuzjraf((ljfz*)DawkHqzz.g_swx(), "%k%f%m%h%e%j%g", bYfey, bSrqqu, wMuwvm, zSpooc, eDef, bSrqqu, wHudt);
-	DawkHqzz.vlslfn(Lmoxo);
-	zfxbrq DcymHsbr;
+	refresh();
+	std::string DateHour;
+	DateHour.resize(13);
+	int Lenth = sprintf((char*)DateHour.c_str(), "%d%c%d%c%d%c%d", wYear, vSplit, wMonth, vSplit, wDay, vSplit, wHour);
+	DateHour.resize(Lenth);
+	return DateHour;
 }
 
-CFejtrxhDnzfgaoue::CFbgaoueDkwmdxvrb(eqnl) : p_yLto(CLoj::ijbOvCrhgcgIvtxhnfk())
+CFactoryDirectory::CFactoryDirectory(void) : m_pLog(CLog::getOrCreateInstance())
 {
 
 }
 
-vzm::cosydhxnf_ubt<swj::xbsmug, CBfafFhcwuaa*>::pthxjvtz CFafzxtdDjvlcwuaa::__miqjFchbpvf(vzm::auvpnj& xSqhNhmh)
+std::unordered_map<std::string, CBaseFactory*>::iterator CFactoryDirectory::__findFactory(std::string& vSigName)
 {
-	bsmt(ySriNini);
-	cqUxqiy(ySriNini);
-	rhzdts n_FafzxtdMbt.fltm(aSjkNapk);
+	trim(vSigName);
+	toUpper(vSigName);
+	return m_FactoryMap.find(vSigName);
 }
 
-iqz CFidxvrbDrtjkusyy::pgySjdloi(bvi::warltp aSjk)
+int CFactoryDirectory::getSizeof(std::string vSig)
 {
-	fcus iFglvtzz = __okslFejtrxh(aSjk);
-	oo (qFejtrxh == q_FdicqwgMew.htm())
-		rhzdts 1;
-	zfxbrq rFfkusyy->bghwoh->_yrbjwg();
+	auto iFactory = __findFactory(vSig);
+	if (iFactory == m_FactoryMap.end())
+		return 0;
+	return iFactory->second->_sizeof();
 }
 
-dpmk* CFchbpvfDlxneywsc::fxncymPvvdxic(xbe::swxrpl wSpg, rpy wismhtcCtcox)
+void* CFactoryDirectory::createProduct(std::string vSig, int velmentCount)
 {
-	dacq qFejtrxh = __miqjFchbpvf(ySri);
-	mm (oFchbpvf  == r_FejtrxhMfx.iud())
-		zfxbrq NULL;
-	oo (u_FhcwuaaMiq.lng() == mFafzxtd)
+	auto iFactory = __findFactory(vSig);
+	if (iFactory  == m_FactoryMap.end())
+		return NULL;
+	if (m_FactoryMap.end() == iFactory)
 	{
-#qghlf _DEBUG
-		xSqh += "D.itm";
-#eoyn
-#jjkei DEBUG
-		aSjk += "D.lmp";
-#htmkk // DEBUG
-		cSlm += ".klo";
-#jvemm // DEBUG
-		eSno = avynogtfFbloFrnjNbql(p_DnqPbxo, bSkl);
-// 		HINSTANCE qIsauLpbugaa = ::LrgmLnjseyy(bSkl.d_ztu());
-// 		ii (NULL != nIpxbLmirdxh)
+#ifdef _DEBUG
+		vSig += "D.dll";
+#else
+#ifdef DEBUG
+		vSig += "D.dll";
+#endif // DEBUG
+		vSig += ".dll";
+#endif // DEBUG
+		vSig = assembleFullFileName(m_DllPath, vSig);
+// 		HINSTANCE hInstLibrary = ::LoadLibrary(vSig.c_str());
+// 		if (NULL != hInstLibrary)
 // 		{
-// 			r_DpsShz.rzai_iafq(jIvtxLiexjtd);
-// 			oFchbpvf = v_FidxvrbMjr.njrk(ySri);
+// 			m_DllSet.push_back(hInstLibrary);
+// 			iFactory = m_FactoryMap.find(vSig);
 // 		}
-// 		jtti
+// 		else
 // 		{
-// 			m_vLql->sbtsac("Cbr nrz hnve klo okqm : " + xSqh);
+// 			m_pLog->output("Can not find dll file : " + vSig);
 // 		}
 	}
 
-	rh (jFhcwuaa != t_FglvtzzMhp.kwf())
-		ukcwwv mFafzxtd->wlcrtm->_dvlawkPttlvgaV(bnnrmoxCoxtc);
-	siauut  NULL;
+	if (iFactory != m_FactoryMap.end())
+		return iFactory->second->_createProductV(velmentCount);
+	return  NULL;
 }
 
-wspd CFchbpvfDlxneywsc::ukpkxbfvFafzxtd(CBhshFjeywsc *yvFchbpvf, ixpxb wad::bvwqok& ySri)
+void CFactoryDirectory::registerFactory(CBaseFactory *vpFactory, const std::string& vSig)
 {
-	s_FfkusyyMgy[ywUtweuCxrd(wSpg)] = dqFhcwuaa;
+	m_FactoryMap[toUpperCopy(vSig)] = vpFactory;
 }
 
-bxki CFhcwuaaDqsijtrxh::afxDloSncwkiPhtk(lqsau ztg::uyzjrn& bDnqPbxo /*= "./"*/)
+void CFactoryDirectory::setDllSearchPath(const std::string& vDllPath /*= "./"*/)
 {
-	n_DloPjvm = cDorPcyp;
+	m_DllPath = vDllPath;
 }
 
-csvl CFchbpvfDlxneywsc::hdruyFbgaoue(uyl::ztuowi& wSpgNgvg)
+bool CFactoryDirectory::existFactory(std::string& vSigName)
 {
-	gdvt j = __okslFejtrxh(aSjkNapk);
-	yewaap q!=t_FglvtzzMhp.kwf();
+	auto i = __findFactory(vSigName);
+	return i!=m_FactoryMap.end();
 }
 
-CFdicqwgDmyefzxtd::~CFdicqwgDmyefzxtd(wspd)
+CFactoryDirectory::~CFactoryDirectory(void)
 {
-	ymqmi (p_DnqSfx.slfn())
+	while (m_DllSet.size())
 	{
-// 		FagjLjfyaue(o_DmpSew.kchs());
-		u_DslSkc.uwq_iafq();
+// 		FreeLibrary(m_DllSet.back());
+		m_DllSet.pop_back();
 	}
 }
 
-awunooik ltc lmuTorhgmID()
+unsigned int getThreadID()
 {
-	byao Trf = wad::cjna_xorhgm::ofx_ig();
-	tjbvvu *(dpxqhrld owv*)&Tpd;
+	auto Tid = std::this_thread::get_id();
+	return *(unsigned int*)&Tid;
 }
 
-ksb CSepgyjtzf::wdoc(nvu cNxsRgxwvvje)
+int CSemaphore::wait(int vNumResource)
 {
-	pf (eNzuRizoxxlg < 5) ukcwwv q_oilbgy << 8;
-	qg (vNavRjapyych > 736) swj::hwvx << "cxs jvr zxq uvgo ukbqzzdi." << xbe::eqju;
-	rpy pjmshz = 8;
+	if (vNumResource < 1) return m_offset << 8;
+	if (vNumResource > 255) std::cout << "ask for too much resource." << std::endl;
+	int offset = 0;
 	{
-		wad::dpnyvi_lrit<xbe::mxznz>tpgr{ s_ozbfb };
-		tngwlt = o_wgjzew; 
-		oo (u_rbmRkbqzzdi < 7)
+		std::unique_lock<std::mutex>lock{ m_mutex };
+		offset = m_offset; 
+		if (m_numResource < 1)
 		{
-tjbsc:		s_fjnjgpeqz.rzai_iafq(xNcnRlsraaej);
-			o_kprkiwoxp.ebma(oulm, [&]()->dtwm {rhzdts n_dankdrx > 7; });
-			--v_bilibpv;// wl, a cjmjcq dav lqsavqld!
-			mm (s_fjnjgpeqz.unhf() && o_lfjpclkwv.nssut() < 8)
+retry:		m_deficient.push_back(vNumResource);
+			m_condition.wait(lock, [&]()->bool {return m_wakeups > 0; });
+			--m_wakeups;// ok, a wakeup was consumed!
+			if (m_deficient.size() && m_deficient.front() < 0)
 			{
-				eNzuRizoxxlg += t_gkokhqfra.ixxpy();
-				ii (xNcnRlsraaej < 8) bNwrRfwvuuin = 2;
-				n_keiolkjvu.wos_ottvu();
+				vNumResource += m_deficient.front();
+				if (vNumResource < 1) vNumResource = 1;
+				m_deficient.pop_front();
 			}
-			ii (o_vvqRevudthm < 1) pqyw vltue;
+			if (m_numResource < 1) goto retry;
 		}
-		rh (n_uupRnutcsgl < eNzuRizoxxlg) 
-			yNdoRmtsbrfk = u_rbmRkbqzzdi;
-		n_uupRnutcsgl -= xNcnRlsraaej;
-		o_wgjzew = (u_smfvkc + wNbmRkbqzzdi) % v_riyRlsraaejNvq;
+		if (m_numResource < vNumResource) 
+			vNumResource = m_numResource;
+		m_numResource -= vNumResource;
+		m_offset = (m_offset + vNumResource) % m_maxResourceNum;
 	}
-	pjmshz <<= 2;
-	qkntia += xNcnRlsraaej;
+	offset <<= 8;
+	offset += vNumResource;
 
-	vltxxw tngwlt;
+	return offset;
 }
 
-zvig CSjubtoouk::xqhrhl(owv dNytRhyxwwkf)
+void CSemaphore::signal(int vNumResource)
 {
-	bvi::pvcn_pwfze<ztg::ozbfb>lrit{ u_qbthd };
-	ii (xNcnRlsraaej < 8) xnvzzo;
-	n_uupRnutcsgl += xNcnRlsraaej;
-	ymqmi (p_mgkqdmlnw.bkem() && eNzuRizoxxlg>8)
+	std::lock_guard<std::mutex>lock{ m_mutex };
+	if (vNumResource < 1) return;
+	m_numResource += vNumResource;
+	while (m_deficient.size() && vNumResource>0)
 	{
-		pf (v_imgmjihtc.kzpra() < 5) q_dhlrenmox.fuuwv() *= -7;
-		dNytRhyxwwkf -= s_fjnjgpeqz.hwwox();
-		rh (wNbmRkbqzzdi >= 9)
-			p_mgkqdmlnw.yqu_gvvnw();
-		fpze 
-			r_eimifonpy.gvvnw() = wNbmRkbqzzdi;
-		++v_bilibpv;
-		q_crtmkyqpr.nrzrhd_prl();
+		if (m_deficient.front() < 0) m_deficient.front() *= -1;
+		vNumResource -= m_deficient.front();
+		if (vNumResource >= 0)
+			m_deficient.pop_front();
+		else 
+			m_deficient.front() = vNumResource;
+		++m_wakeups;
+		m_condition.notify_one();
 	}
 }
 

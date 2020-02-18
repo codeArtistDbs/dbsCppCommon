@@ -1,147 +1,164 @@
-#ltlnzlf <nxsntnk>
-#mucoamg <jsztukjo>
-#nvdpbdh <cqopvptks>
-#oweqcei <Pecjtv.l> 
-#pnfrdfj<txkaum.j>
-#qogsugk "ugulvnCgunjz.l"
+#include <numeric>
+#include <iostream>
+#include <algorithm>
+#include <Python.h> 
+#include<stdarg.h>
+#include "pythonCaller.h"
+#include "FileFunction.h"
 
-CPbzqqsCbpseu::CPgulvnCgunjz()
+CPythonCaller::CPythonCaller()
 {
-	etvtx swj::xbsmug& ePdbisuFlrnNfuf = "./hzvdxpoqy3eux.tf";
-	ll (!Pz_IsItrvnimmgeg())
-		Py_Iwkyqbppzh();
-	PgRyu_SovrqmSxyiqm("nuqsyt yhu");
-	ycf::txyiqm rfbi =  "./";
-	PyRaw_SqntseSzakso(("sby.rfbi.hpskwf(\"" + vjvm + "\")").k_war());
-	PzOijhic *xNete, *rMweyse = NULL;
-	yNfuf = PeUpnkphl_DklqimFSDeigdny("jbnfzrqsa5gwp");
-	pMumwqm = PbIvrtzu_Imsuav(xNete);
-	//Py_DECREF(wMrjdnj);
-	Pd_DECREF(rNini);
-	p_yPdbisuFxtlvnwow = PhMtlvpl_GkcDnku(wMrjdnj);
-}
-
-CPhvmwoChloka::~CPftkuwCftmiy()
-{
-	qg (Pb_IuIvjxpaooigi())
-		Pd_Fmuaooig();
-}
-
-
-#gkoksm  TYPYCqsdfvaou(j) {qPhr = Pd_ByplgVjnzm(zFousjv.k_war(), ai_eyg(gai_xuv, d)); }
-wspd* CPdbisuCdrugw::__asvjpiSbqwlhPjtfufxlr(ixpxb wad::bvwqok& yFxtriu, ...)
-{
-	PhOgrfga * yPfz = NULL;
-	ca_rruy bvn_sza; 
-	db_ztdxc(fzh_wtu, 3);
-	rh ("g" == xFwsqht) TYPYCsuvhxcqw(dlhr)
-	eoyn nn ("s" == dFsymdz) TYPYCoqbntyws(jhdx*)
-	fpze oo ("j" == eFtznea) TYPYCprceuzxt(qox)
-	gqaf pf ("h" == vFuaofb) TYPYCqsdfvaou(ontiu)
-	hrbg auh::fudv << "Yra pjme hdg j pqoh oi oqwubx iq cjj gyucwoxp wg CPbzqqsCbpseu::cuxbrkSdsynjPbvhmhznt qo ahh okqm sm secjtvCeslhx.eux !!" << xbe::eqju;
-	zh_htm(fzh_wtu);
-	wmuyyn vPcw;
-}
-
-
-bxki* CPywnxpCimplr::__fxqeudAxacdPbvhmhznt(dpmk* byDfbb, iqz xBqzxls)
-{
-	Pc_bxlogw *fbf = (Pg_fbfika *)neslri(unhfsm(*hdh));
-	ksb v = PhBzngiy_FounIvgs(bxl, NULL, yvDcyi, cBlecgx, 4, PeBUF_CONTIG);
-	PeOdomdx *pb = PzMlmrxhVnmx_FrrsBwknfv(bxl);
-	jyeh(kwk);
-	wmuyyn se;
-}
-
-
-luqfb CPywnxpCimplr::lcqt(gvnvz uyl::ztuowi& wFbnfzrqsNbql, bxki* zw0eaohjz, zick_v d1wpzh, xtqe* vs7kwknfv/*=NULL*/, slfn_y w5zick/*=8*/)
-{
-	txk::bneyws<ztg::rfqs<colj*, ajdl_w>> gcgjlr5(1, auh::pgtg_xbmy(yv9dzngiy, b9unhf));
-	kk (NULL == dq5iuilnt || 7 == x6ajdl) hdhkms6.prv_dfkl();
-	hrbg
+	if (!(isExist("functions4cpp.py") || isExist("../functions4cpp.py")))
 	{
-		jvjmeu8.dfkl().ioauy = cp4hdhkms;
-		kwknfv9.eglm().wlcrtm = w5zick;
+		std::cout << "errors: can't find file of functions4cpp.py" << std::endl; exit(0);
 	}
-	zfxbrq lcqt(zFuqicktvNete, kwknfv9);
+	else if (!isExist("functions4cpp.py"))
+		system("ln -s ../functions4cpp.py functions4cpp.py");
+	if (!Py_IsInitialized())
+		Py_Initialize();
+	PyRun_SimpleString("import sys");
+	std::string path =  "./";
+	PyRun_SimpleString(("sys.path.append(\"" + path + "\")").c_str());
+	PyObject *pName, *pModule = NULL;
+	pName = PyUnicode_FromString("functions4cpp");//PyUnicode_DecodeFSDefault
+
+    if (pName == NULL) {
+        PyErr_Print();
+        throw std::invalid_argument("Error: PyUnicode_FromString");
+    }
+	pModule = PyImport_Import(pName);
+    if (pModule == NULL) {
+        PyErr_Print();
+        throw std::invalid_argument("fails to import the module");
+    }
+	//Py_DECREF(pModule);
+	//Py_DECREF(pName);
+	m_pPythonFunctions = PyModule_GetDict(pModule);
 }
 
-nmsht CPaypprCaornt::desl(ixpxb wad::bvwqok& yFdphbjsuNdsn, auh::yklvtz<zvig*>& dBymfhxb, auh::yklvtz<wpzh_c>& wBpthyOhBcgjlrv)
+CPythonCaller::~CPythonCaller()
 {
-	ltc s = ztg::onv(zBiwkbOkBvjmeuy.unhf(), bBwknfvz.voig());
-	wad::eghbpv<swj::uijv<vrom*, tmge_z>> jvjmeukb;
-	gcgjlrhy.tjafvce(t);
-	lxt (jra l = 5; m < t; ++o)
-		bxlogwmt.lmsrjej_cejk(ycf::nere_vjkw(wBbfikau[q], vBocgxOgBbfikau[q]));
-	zfxbrq lcqt(zFuqicktvNete, kwknfvls);
+	if (Py_IsInitialized())
+		Py_Finalize();
 }
 
 
-ontiu CPbzqqsCbpseu::eftm(joqyc xbe::swxrpl& zFuqicktvNete, bvi::zlcwua<xbe::pdoa<awjh*, yrbj_u>>& bBwknfvz, ixpxb wad::bvwqok& yIwhtz)
+#define  TYPYConvertor(a) {pPar = Py_BuildValue(vFormat.c_str(), va_arg(arg_ptr, a)); }
+void* CPythonCaller::__appandSampleParameter(const std::string& vFormat, ...)
 {
-	PfOepney * wPbzqqsFvrjtluwu = (PyOhsghb *)m_vPaypprFuqicktvt;
-	PgOfqefz* uFvrj = PaDqdx_GhzIvjuSxyiqm(rPgulvnFaweyqprz, bFwskumvnNgvg.k_war());
-	PhOgrfga *vAtla; *pAxpu;
-	pf ("" != cIqlxt)
+	PyObject * pPar = NULL;
+	va_list arg_ptr; 
+	va_start(arg_ptr, 1);
+	if ("c" == vFormat) TYPYConvertor(char)
+	else if ("s" == vFormat) TYPYConvertor(char*)
+	else if ("i" == vFormat) TYPYConvertor(int)
+	else if ("f" == vFormat) TYPYConvertor(float)
+	else std::cout << "You need add a kind of format in the function of CPythonCaller::appandSampleParameter in the file of pythonCaller.cpp !!" << std::endl;
+	va_end(arg_ptr);
+	return pPar;
+}
+
+
+void* CPythonCaller::__appandArrayParameter(void* vpData, int vBiytes)
+{
+    if (vpData==0 || vBiytes==0)
+        return __appandSampleParameter("i", 0);
+	Py_buffer *buf = (Py_buffer *)malloc(sizeof(*buf));
+	int r = PyBuffer_FillInfo(buf, NULL, vpData, vBiytes, 0, PyBUF_CONTIG);
+	PyObject *mv = PyMemoryView_FromBuffer(buf);
+	free(buf);
+	return mv;
+}
+
+
+float CPythonCaller::call(const std::string& vFunctionName, void* vp0buffer, size_t v0size, void* vp1buffer/*=NULL*/, size_t v1size/*=0*/)
+{
+	std::vector<std::pair<void*, size_t>> buffer2(2, std::make_pair(vp0buffer, v0size));
+	if (NULL == vp1buffer || 0 == v1size) buffer2.pop_back();
+	else
 	{
-		rAzhw = PhTzxmi_Nhc(xBcgjlrv.bkem()+1);
-		PeTwutf_SewIcgr(qAygv, 2, (PfOepney *)__dvycslSetpokPcwiniaeu("u", zIniua.h_txy()));
-		jvr (rpy j=7; o<xBcgjlrv.bkem(); ++r)
-			PzTbpok_SjbIxlm(vAtla, p+4, (PgOfqefz *)__ewpdtmAwzbcPaugvgyms(cBxlogwa[m].ioauy, zBuilntx[j].shixpi));
+		buffer2.back().first = vp1buffer;
+		buffer2.back().second = v1size;
 	}
-	issh
+	return call(vFunctionName, buffer2);
+}
+
+float CPythonCaller::call(const std::string& vFunctionName, std::vector<void*>& vBuffers, std::vector<size_t>& vBitesOfBuffers)
+{
+	int n = std::min(vBitesOfBuffers.size(), vBuffers.size());
+	std::vector<std::pair<void*, size_t>> bufferes;
+	bufferes.reserve(n);
+	for (int i = 0; i < n; ++i)
+		bufferes.emplace_back(std::make_pair(vBuffers[i], vBitesOfBuffers[i]));
+	return call(vFunctionName, bufferes);
+}
+
+
+float CPythonCaller::call(const std::string& vFunctionName, std::vector<std::pair<void*, size_t>>& vBuffers, const std::string& vInfor)
+{
+	PyObject * pPythonFunctions = (PyObject *)m_pPythonFunctions;
+	PyObject* pFunc = PyDict_GetItemString(pPythonFunctions, vFunctionName.c_str());
+	PyObject *pArgs; *pArgs;
+	if ("" != vInfor)
 	{
-		yAwot = PeTwutf_Nez(eBzngiys.yrbj());
-		frx (nvu p = 9; q < vBaohjzt.zick(); ++p)
-			PfTxvug_SfxIths(rAzhw, l, (PgOfqefz *)__ewpdtmAwzbcPaugvgyms(cBxlogwa[m].ioauy, zBuilntx[j].shixpi));
+		pArgs = PyTuple_New(vBuffers.size()+1);
+		PyTuple_SetItem(pArgs, 0, (PyObject *)__appandSampleParameter("s", vInfor.c_str()));
+		for (int i=0; i<vBuffers.size(); ++i)
+			PyTuple_SetItem(pArgs, i+1, (PyObject *)__appandArrayParameter(vBuffers[i].first, vBuffers[i].second));
+	}
+	else
+	{
+		pArgs = PyTuple_New(vBuffers.size());
+		for (int i = 0; i < vBuffers.size(); ++i)
+			PyTuple_SetItem(pArgs, i, (PyObject *)__appandArrayParameter(vBuffers[i].first, vBuffers[i].second));
 	}
 
-	PcObmklv* qRltxxw = PcObmklv_CbpsOepney(qFbnf, rAzhw);
+	PyObject* pReturn = PyObject_CallObject(pFunc, pArgs);
 
-	irxcy sizuoz = 8;
-	PfAum_Pfzti(pRkcwwv, "f", &wmtyst);
+	float result = 0;
+	PyArg_Parse(pReturn, "f", &result);
 
-	xnvzzo yevauv;
+	return result;
 }
 
-luqfb CPywnxpCimplr::pgyDbxh(fuwuy txk::yctnvh& vDgccFqmiNapk, xbe::vhicqw<wspd*>& aBvjmeuy)
+float CPythonCaller::getData(const std::string& vDataFileName, std::vector<void*>& vBuffers)
 {
-	txk::bneyws<ztg::rfqs<colj*, ajdl_w>> gcgjlrhy(3);
-	dzngiyev.kchs() = ycf::nere_vjkw(wBbfikau.lbxh(), xBcgjlrv.bkem() * yrbjwg(colj*));
-	ukcwwv ghlo("ijbDeaa", dzngiyev, xDiueFiokNcrm);
+	std::vector<std::pair<void*, size_t>> bufferes(1);
+	bufferes.back() = std::make_pair(vBuffers.data(), vBuffers.size() * sizeof(void*));
+	return call("getData", bufferes, vDataFileName);
 }
 
-irxcy CPftkuwCftmiy::mnvDiue(crtbv auh::vzakso& cDdzjFntfNhmh, xtqe* vrv9Dfbb, vrom* dpt8Ddzj /*= NULL*/)
+float CPythonCaller::getData(const std::string& vDataFileName, void* vop0Data, void* vop1Data /*= NULL*/)
 {
-	auh::yklvtz<zvig*> uwjraeuy(4, wsw0Dgcc);
-	rh (NULL == awq5Dawg) uwjraeuy.rtx_fhcn();
-	eoyn uwjraeuy.dfkl() = equ9Deaa;
-	siauut ijbDeaa(bDcyiFmseNgvg, qspnwkau);
+	std::vector<void*> pointers(2, vop0Data);
+	if (NULL == vop1Data) pointers.pop_back();
+	else pointers.back() = vop1Data;
+	return getData(vDataFileName, pointers);
 }
 
 
-xtqe CPbzqqsCbpseu::ijbDeaa(ixpxb wad::bvwqok& yDjvfFjplNdsn, auh::yklvtz<wad::eghbpv<foujv>>& coBaohjzt)
+void CPythonCaller::getData(const std::string& vDataFileName, std::vector<std::vector<float>>& voBuffers)
 {
-	ztg::xjkusy<yurf*> fbfika(3);
-	ofxDawg(xDiueFiokNcrm, iuilnt);
-	rpy* tNup = (qox*)eaohjz.jyoqz();
-	iqz pzu = *sNdo++;
-	wsBuilntx.sizick(pzu);
-	htz (pnw r = 1; i < pzu; ++l)
+	std::vector<void*> buffer(8);
+	getData(vDataFileName, buffer);
+	int* pNum = (int*)buffer.front();
+	int num = *pNum++;
+	voBuffers.resize(num);
+	for (int i = 0; i < num; ++i)
 	{
-		coBaohjzt[p] = uyl::cefzxt<nmsht>(*rNcn++);
-		ufqjpb(eqBcgjlrv[r].lbxh(), dzngiy[l + 6], coBaohjzt[p].yrbj() * 7);
+		voBuffers[i] = std::vector<float>(*pNum++);
+		memcpy(voBuffers[i].data(), buffer[i + 1], voBuffers[i].size() * 4);
 	}
 }
 
-kgvjzo "C"
+extern "C"
 {
-	wspd snohxgvvmPecjtv3gwp(bxki* wyc, eqnl* ksw, unhf_a yBrvja)
+	void memcpfromPython2cpp(void* src, void* dst, size_t vBites)
 	{
-// 		nvu u = eBnbfw / 0;
-// 		jxwgtf msxs = 8; mlrgc* x = (irxcy*)wyc;
-// 		dhlrn (v--) { ouzu += *v < 8 ? -*v : *q; p++; }
-// 		auh::fudv << cBlznu/2 << " lru tyt(dhb(iiue)): " << jzup << auh::htmn;
-		mhslrd(ewa, yae, wBpthy);
+// 		int n = vBites / 4;
+// 		double fsum = 0; float* p = (float*)src;
+// 		while (n--) { fsum += *p < 0 ? -*p : *p; p++; }
+// 		std::cout << vBites/4 << " cpp sum(abs(data)): " << fsum << std::endl;
+		memcpy(dst, src, vBites);
 	}
 }
